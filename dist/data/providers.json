@@ -3,7 +3,9 @@
     "id": "openai",
     "name": "OpenAI",
     "website": "https://openai.com",
+    "apiBaseUrl": "https://api.openai.com/v1",
     "apiDocsUrl": "https://platform.openai.com/docs",
+    "modelsEndpoint": "https://api.openai.com/v1/models",
     "icon": "🤖",
     "color": "#10a37f",
     "description": "Leading AI research company, creators of GPT models and ChatGPT",
@@ -23,6 +25,7 @@
     "id": "anthropic",
     "name": "Anthropic",
     "website": "https://anthropic.com",
+    "apiBaseUrl": "https://api.anthropic.com",
     "apiDocsUrl": "https://docs.anthropic.com",
     "icon": "🧠",
     "color": "#cc785c",
@@ -41,7 +44,9 @@
     "id": "google",
     "name": "Google AI",
     "website": "https://ai.google.dev",
+    "apiBaseUrl": "https://generativelanguage.googleapis.com/v1beta",
     "apiDocsUrl": "https://ai.google.dev/docs",
+    "modelsEndpoint": "https://generativelanguage.googleapis.com/v1beta/models",
     "icon": "🔷",
     "color": "#4285f4",
     "description": "Google's AI division, creators of Gemini models with massive context windows",
@@ -60,16 +65,16 @@
     "name": "xAI",
     "website": "https://x.ai",
     "apiBaseUrl": "https://api.x.ai/v1",
-    "apiDocsUrl": "https://docs.x.ai/docs",
-    "icon": "𝕏",
+    "apiDocsUrl": "https://docs.x.ai",
+    "modelsEndpoint": "https://api.x.ai/v1/models",
+    "icon": "🅧",
     "color": "#000000",
-    "description": "Elon Musk's AI company with Grok models and real-time X data access",
+    "description": "Elon Musk's AI company, creators of Grok models with real-time knowledge",
     "features": [
       "Chat completion",
-      "Code generation",
-      "Vision",
-      "Function calling",
-      "Real-time X (Twitter) data"
+      "Real-time web search",
+      "Extended context",
+      "Function calling"
     ]
   },
   {
@@ -78,53 +83,16 @@
     "website": "https://mistral.ai",
     "apiBaseUrl": "https://api.mistral.ai/v1",
     "apiDocsUrl": "https://docs.mistral.ai",
-    "icon": "🌪️",
-    "color": "#f2a73b",
-    "description": "French AI company with Mistral and Mixtral mixture-of-experts models",
+    "modelsEndpoint": "https://api.mistral.ai/v1/models",
+    "icon": "⚡",
+    "color": "#ff7000",
+    "description": "European AI company focused on efficient and powerful open models",
     "features": [
       "Chat completion",
-      "Code generation",
       "Function calling",
       "JSON mode",
-      "Mixture of experts architecture",
-      "Competitive pricing"
-    ]
-  },
-  {
-    "id": "meta",
-    "name": "Meta",
-    "website": "https://llama.meta.com",
-    "apiBaseUrl": "https://api.together.xyz/v1",
-    "apiDocsUrl": "https://llama.meta.com/docs",
-    "icon": "🦙",
-    "color": "#0668e1",
-    "description": "Meta's open-source Llama models, available via various cloud providers",
-    "features": [
-      "Chat completion",
-      "Code generation",
-      "Vision",
-      "Function calling",
-      "JSON mode",
-      "Open-source",
-      "Long context (128K tokens)"
-    ]
-  },
-  {
-    "id": "deepseek",
-    "name": "DeepSeek",
-    "website": "https://deepseek.com",
-    "apiBaseUrl": "https://api.deepseek.com/v1",
-    "apiDocsUrl": "https://platform.deepseek.com/api-docs",
-    "icon": "🔍",
-    "color": "#00a6fb",
-    "description": "Chinese AI company with highly competitive pricing and strong coding capabilities",
-    "features": [
-      "Chat completion",
-      "Code generation",
-      "Reasoning",
-      "Function calling",
-      "JSON mode",
-      "Extremely cost-effective"
+      "Embeddings",
+      "Moderation"
     ]
   },
   {
@@ -142,6 +110,39 @@
       "Function calling",
       "JSON mode",
       "Cost-effective pricing"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta AI",
+    "website": "https://ai.meta.com",
+    "apiBaseUrl": "https://api.meta.ai/v1",
+    "apiDocsUrl": "https://llama.meta.com/docs",
+    "icon": "🦙",
+    "color": "#0668e1",
+    "description": "Meta's open-source Llama models available through various providers",
+    "features": [
+      "Chat completion",
+      "Code generation",
+      "Vision (Llama 3.2)",
+      "Open source"
+    ]
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "website": "https://www.deepseek.com",
+    "apiBaseUrl": "https://api.deepseek.com/v1",
+    "apiDocsUrl": "https://platform.deepseek.com/docs",
+    "icon": "🔍",
+    "color": "#1a73e8",
+    "description": "Chinese AI company known for extremely cost-effective models with reasoning",
+    "features": [
+      "Chat completion",
+      "Reasoning",
+      "Code generation",
+      "Extended context",
+      "Ultra-low pricing"
     ]
   }
 ]

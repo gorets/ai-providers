@@ -3,7 +3,7 @@
  */
 
 import { ModelInfo, ModelCapability, ModelTag, ModelStatus } from './types';
-import { ALL_MODELS } from './models';
+import { ALL_MODELS } from './models/index';
 
 /**
  * Calculate cost for a given model and token usage
@@ -65,7 +65,7 @@ export function calculateCostWithCache(
  */
 export function getModelById(id: string): ModelInfo | undefined {
   return ALL_MODELS.find(
-    model => model.id === id || model.aliases?.includes(id)
+    (model: ModelInfo) => model.id === id || model.aliases?.includes(id)
   );
 }
 
@@ -73,28 +73,28 @@ export function getModelById(id: string): ModelInfo | undefined {
  * Get all models from a specific provider
  */
 export function getModelsByProvider(provider: string): ModelInfo[] {
-  return ALL_MODELS.filter(model => model.provider === provider);
+  return ALL_MODELS.filter((model: ModelInfo) => model.provider === provider);
 }
 
 /**
  * Get models by tag
  */
 export function getModelsByTag(tag: ModelTag): ModelInfo[] {
-  return ALL_MODELS.filter(model => model.tags.includes(tag));
+  return ALL_MODELS.filter((model: ModelInfo) => model.tags.includes(tag));
 }
 
 /**
  * Get models by capability
  */
 export function getModelsByCapability(capability: ModelCapability): ModelInfo[] {
-  return ALL_MODELS.filter(model => model.capabilities.includes(capability));
+  return ALL_MODELS.filter((model: ModelInfo) => model.capabilities.includes(capability));
 }
 
 /**
  * Get models by status
  */
 export function getModelsByStatus(status: ModelStatus): ModelInfo[] {
-  return ALL_MODELS.filter(model => model.status === status);
+  return ALL_MODELS.filter((model: ModelInfo) => model.status === status);
 }
 
 /**
@@ -102,7 +102,7 @@ export function getModelsByStatus(status: ModelStatus): ModelInfo[] {
  */
 export function getActiveModels(): ModelInfo[] {
   return ALL_MODELS.filter(
-    model => model.status !== 'deprecated' && model.status !== 'disabled'
+    (model: ModelInfo) => model.status !== 'deprecated' && model.status !== 'disabled'
   );
 }
 
@@ -110,14 +110,14 @@ export function getActiveModels(): ModelInfo[] {
  * Get deprecated models
  */
 export function getDeprecatedModels(): ModelInfo[] {
-  return ALL_MODELS.filter(model => model.status === 'deprecated');
+  return ALL_MODELS.filter((model: ModelInfo) => model.status === 'deprecated');
 }
 
 /**
  * Get disabled models
  */
 export function getDisabledModels(): ModelInfo[] {
-  return ALL_MODELS.filter(model => model.status === 'disabled');
+  return ALL_MODELS.filter((model: ModelInfo) => model.status === 'disabled');
 }
 
 /**
@@ -139,10 +139,10 @@ export function getCheapestModel(options?: {
   capabilities?: ModelCapability[];
   activeOnly?: boolean;
 }): ModelInfo | undefined {
-  let models = ALL_MODELS.filter(m => m.pricing && m.pricing.input > 0);
+  let models = ALL_MODELS.filter((m: ModelInfo) => m.pricing && m.pricing.input > 0);
 
   if (options?.provider) {
-    models = models.filter(m => m.provider === options.provider);
+    models = models.filter((m: ModelInfo) => m.provider === options.provider);
   }
 
   if (options?.capabilities) {
@@ -152,7 +152,7 @@ export function getCheapestModel(options?: {
   }
 
   if (options?.activeOnly) {
-    models = models.filter(m => m.status !== 'deprecated' && m.status !== 'disabled');
+    models = models.filter((m: ModelInfo) => m.status !== 'deprecated' && m.status !== 'disabled');
   }
 
   return models.sort((a, b) => {
@@ -166,7 +166,7 @@ export function getCheapestModel(options?: {
  * Find the most expensive model (by total cost per 1M tokens)
  */
 export function getMostExpensiveModel(): ModelInfo | undefined {
-  return ALL_MODELS.filter(m => m.pricing)
+  return ALL_MODELS.filter((m: ModelInfo) => m.pricing)
     .sort((a, b) => {
       const aPrice = (a.pricing?.input ?? 0) + (a.pricing?.output ?? 0);
       const bPrice = (b.pricing?.input ?? 0) + (b.pricing?.output ?? 0);
@@ -197,11 +197,11 @@ export function searchModels(criteria: {
   let results = ALL_MODELS;
 
   if (criteria.provider) {
-    results = results.filter(m => m.provider === criteria.provider);
+    results = results.filter((m: ModelInfo) => m.provider === criteria.provider);
   }
 
   if (criteria.status) {
-    results = results.filter(m => m.status === criteria.status);
+    results = results.filter((m: ModelInfo) => m.status === criteria.status);
   }
 
   if (criteria.capabilities) {
@@ -217,11 +217,11 @@ export function searchModels(criteria: {
   }
 
   if (criteria.minContextWindow) {
-    results = results.filter(m => m.limits.contextWindow >= criteria.minContextWindow!);
+    results = results.filter((m: ModelInfo) => m.limits.contextWindow >= criteria.minContextWindow!);
   }
 
   if (criteria.maxPrice && criteria.maxPrice > 0) {
-    results = results.filter(m => {
+    results = results.filter((m: ModelInfo) => {
       if (!m.pricing) return false;
       const totalPrice = m.pricing.input + m.pricing.output;
       return totalPrice <= criteria.maxPrice!;
@@ -284,7 +284,7 @@ export function getModelsShuttingDownSoon(days: number = 90): ModelInfo[] {
   const now = new Date();
   const futureDate = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
 
-  return ALL_MODELS.filter(model => {
+  return ALL_MODELS.filter((model: ModelInfo) => {
     if (!model.shutdownDate) return false;
     const shutdownDate = new Date(model.shutdownDate);
     return shutdownDate >= now && shutdownDate <= futureDate;
@@ -310,18 +310,18 @@ export function getRecommendedModels(useCase: {
 
   // Filter by budget
   if (useCase.budget === 'low') {
-    models = models.filter(m => m.tags.includes('cost-effective'));
+    models = models.filter((m: ModelInfo) => m.tags.includes('cost-effective'));
   } else if (useCase.budget === 'high') {
-    models = models.filter(m => m.tags.includes('flagship'));
+    models = models.filter((m: ModelInfo) => m.tags.includes('flagship'));
   }
 
   // Filter by priority
   if (useCase.priority === 'speed') {
-    models = models.filter(m => m.tags.includes('fast'));
+    models = models.filter((m: ModelInfo) => m.tags.includes('fast'));
   } else if (useCase.priority === 'quality') {
-    models = models.filter(m => m.tags.includes('flagship') || m.tags.includes('reasoning'));
+    models = models.filter((m: ModelInfo) => m.tags.includes('flagship') || m.tags.includes('reasoning'));
   } else if (useCase.priority === 'balanced') {
-    models = models.filter(m => m.tags.includes('balanced'));
+    models = models.filter((m: ModelInfo) => m.tags.includes('balanced'));
   }
 
   return models.slice(0, 5);

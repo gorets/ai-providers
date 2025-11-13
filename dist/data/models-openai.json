@@ -277,6 +277,148 @@
     "docsUrl": "https://platform.openai.com/docs/models/o1-mini"
   },
   {
+    "id": "gpt-4-turbo-2024-04-09",
+    "name": "GPT-4 Turbo",
+    "provider": "openai",
+    "releaseDate": "2024-04-09",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 10,
+      "output": 30
+    },
+    "description": "Previous generation GPT-4 Turbo, replaced by GPT-4o",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4",
+    "deprecationDate": "2024-08-06",
+    "replacementModel": "gpt-4o-2024-08-06"
+  },
+  {
+    "id": "gpt-4-0613",
+    "name": "GPT-4",
+    "provider": "openai",
+    "releaseDate": "2023-06-13",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8192,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 30,
+      "output": 60
+    },
+    "description": "Original GPT-4 model, replaced by newer versions",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4",
+    "deprecationDate": "2024-06-13",
+    "replacementModel": "gpt-4o-2024-08-06"
+  },
+  {
+    "id": "gpt-3.5-turbo-0125",
+    "name": "GPT-3.5 Turbo",
+    "provider": "openai",
+    "releaseDate": "2024-01-25",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 16385,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 1.5
+    },
+    "description": "Latest GPT-3.5 model, superseded by GPT-4o mini",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-3-5-turbo",
+    "deprecationDate": "2024-09-13",
+    "shutdownDate": "2025-09-13",
+    "replacementModel": "gpt-4o-mini-2024-07-18"
+  },
+  {
+    "id": "gpt-3.5-turbo-instruct",
+    "name": "GPT-3.5 Turbo Instruct",
+    "provider": "openai",
+    "releaseDate": "2023-09-01",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 4096,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 1.5,
+      "output": 2
+    },
+    "description": "Instruction-following model, replaced by chat models",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-3-5-turbo",
+    "deprecationDate": "2024-01-04",
+    "replacementModel": "gpt-4o-mini-2024-07-18"
+  },
+  {
+    "id": "text-davinci-003",
+    "name": "Davinci 003",
+    "provider": "openai",
+    "releaseDate": "2022-11-28",
+    "status": "disabled",
+    "capabilities": [
+      "text-generation"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 4097,
+      "maxOutputTokens": 4097
+    },
+    "pricing": {
+      "input": 20,
+      "output": 20
+    },
+    "description": "Legacy GPT-3 model, shut down January 2024",
+    "docsUrl": "https://platform.openai.com/docs/deprecations",
+    "deprecationDate": "2023-07-06",
+    "shutdownDate": "2024-01-04",
+    "replacementModel": "gpt-3.5-turbo-instruct"
+  },
+  {
     "id": "text-embedding-3-large",
     "name": "Text Embedding 3 Large",
     "provider": "openai",

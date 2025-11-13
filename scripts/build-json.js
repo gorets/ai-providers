@@ -18,7 +18,7 @@ if (!fs.existsSync(dataDir)) {
 
 try {
   // Try to import from compiled TypeScript
-  const indexPath = path.join(distDir, 'src', 'index.js');
+  const indexPath = path.join(distDir, 'index.js');
 
   if (!fs.existsSync(indexPath)) {
     console.log('📦 Compiled files not found. Skipping JSON generation.');

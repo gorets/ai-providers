@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "removeComments": true,
     "strict": true,
     "esModuleInterop": true,
@@ -16,8 +16,7 @@
     "resolveJsonModule": true
   },
   "include": [
-    "src/**/*",
-    "scripts/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",

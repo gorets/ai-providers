@@ -1,0 +1,58 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.XAI_MODELS = void 0;
+exports.XAI_MODELS = [
+    {
+        id: 'grok-beta',
+        aliases: ['grok'],
+        name: 'Grok Beta',
+        provider: 'xai',
+        releaseDate: '2024-11-04',
+        status: 'beta',
+        capabilities: [
+            'text-generation',
+            'chat',
+            'code-generation',
+            'function-calling',
+            'streaming',
+        ],
+        tags: ['flagship', 'experimental'],
+        limits: {
+            contextWindow: 131072,
+            maxOutputTokens: 4096,
+        },
+        pricing: {
+            input: 5.0,
+            output: 15.0,
+        },
+        description: 'xAI flagship model with real-time X (Twitter) data access',
+        docsUrl: 'https://docs.x.ai/docs',
+    },
+    {
+        id: 'grok-vision-beta',
+        aliases: ['grok-vision'],
+        name: 'Grok Vision Beta',
+        provider: 'xai',
+        releaseDate: '2024-11-20',
+        status: 'beta',
+        capabilities: [
+            'text-generation',
+            'chat',
+            'vision',
+            'code-generation',
+            'function-calling',
+            'streaming',
+        ],
+        tags: ['flagship', 'multimodal', 'experimental'],
+        limits: {
+            contextWindow: 131072,
+            maxOutputTokens: 4096,
+        },
+        pricing: {
+            input: 5.0,
+            output: 15.0,
+        },
+        description: 'Grok with vision capabilities for image understanding',
+        docsUrl: 'https://docs.x.ai/docs',
+    },
+];

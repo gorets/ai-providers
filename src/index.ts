@@ -5,11 +5,11 @@
 
 export * from './types';
 export * from './providers';
-export * from './models';
+export * from './models/index';
 export * from './utils';
 
 import { PROVIDERS } from './providers';
-import { ALL_MODELS } from './models';
+import { ALL_MODELS } from './models/index';
 import type { AIProvidersDatabase } from './types';
 
 /**
