@@ -7,12 +7,36 @@ Comprehensive, up-to-date database of AI model providers, models, pricing, and c
 
 ## 📋 Features
 
-- **Comprehensive Provider Data**: Information about major AI providers (OpenAI, Anthropic, Google, etc.)
-- **Detailed Model Information**: Context windows, pricing, capabilities, and tags
+- **Comprehensive Provider Data**: Information about 8 major AI providers (OpenAI, Anthropic, Google, xAI, Mistral, Meta, DeepSeek, Z.AI)
+- **47+ Models**: Including latest GPT-5.1, Claude 4.5, Gemini 2.5, and more
+- **Detailed Model Information**: Context windows, pricing, capabilities, tags, and lifecycle management
 - **TypeScript Support**: Fully typed for excellent IDE support
+- **MCP Support**: Models with Model Context Protocol (MCP) server support marked
+- **Embedding Models**: OpenAI text-embedding models included
 - **JSON Access**: Direct access to JSON data via GitHub for non-NPM usage
 - **Regular Updates**: Kept up-to-date with the latest models and pricing
 - **Easy to Extend**: Simple structure for adding new providers and models
+
+## ✨ Latest Updates
+
+### GPT-5.1 Models (Nov 12, 2025)
+- **GPT-5.1 Instant** - Most-used model with adaptive reasoning
+- **GPT-5.1 Thinking** - Advanced reasoning model for complex tasks
+
+### OpenAI Embeddings
+- **text-embedding-3-large** - 3072 dimensions, best quality
+- **text-embedding-3-small** - 1536 dimensions, 5x cheaper than ada-002
+- **text-embedding-ada-002** - Legacy embedding model
+
+### MCP (Model Context Protocol) Support
+Claude 4.5 models (Haiku, Sonnet, Opus) now support MCP servers for connecting to external tools and data sources.
+
+### New Providers
+- **xAI** - Grok models with real-time X (Twitter) data access
+- **Mistral AI** - Efficient mixture-of-experts models
+- **Meta** - Llama 3.x open-source models
+- **DeepSeek** - Ultra cost-effective models with reasoning
+- **Z.AI** - Chinese AI provider with competitive pricing
 
 ## 📦 Installation
 
@@ -39,7 +63,7 @@ console.log(`Total providers: ${db.providers.length}`);
 console.log(`Total models: ${db.models.length}`);
 
 // Get specific model
-const gpt5 = getModelById('gpt-5-2025-08-07');
+const gpt5 = getModelById('gpt-5.1-instant');
 console.log(`${gpt5.name}: $${gpt5.pricing.input}/1M input tokens`);
 
 // Get all models from a provider
@@ -77,7 +101,7 @@ console.log(`Total cost: $${cost.totalCost.toFixed(4)}`);
 
 // Calculate with prompt caching (Anthropic models)
 const costWithCache = calculateCostWithCache(
-  'claude-sonnet-4-5-20250929',
+  'claude-sonnet-4-5',
   50000,   // new input tokens
   200000,  // cached input tokens
   10000    // output tokens
@@ -85,7 +109,7 @@ const costWithCache = calculateCostWithCache(
 
 // Compare costs across multiple models
 const comparison = compareCosts(
-  ['gpt-4o-mini-2024-07-18', 'claude-haiku-4-5-20251001', 'gemini-2.5-flash'],
+  ['gpt-4o-mini-2024-07-18', 'claude-haiku-4-5', 'gemini-2.5-flash'],
   100000,
   20000
 );
@@ -258,14 +282,15 @@ When a model is deprecated, check these fields:
 - `replacementModel` - Recommended model to migrate to
 
 **Model Aliases:**
-Some models have multiple identifiers. Use the `aliases` field to find alternative IDs:
+Some models have multiple identifiers. The main ID is the simple name, with dated versions in aliases:
 ```typescript
 {
-  id: 'claude-sonnet-4-5-20250929',
-  aliases: ['claude-sonnet-4-5', 'claude-sonnet-4.5'],
+  id: 'claude-sonnet-4-5',  // Simple name as main ID
+  aliases: ['claude-sonnet-4-5-20250929', 'claude-sonnet-4.5'],  // Dated version in aliases
   // ... other fields
 }
 ```
+You can use either the main ID or any alias when searching for models.
 
 ## 🎯 Model Capabilities
 
@@ -281,6 +306,7 @@ Some models have multiple identifiers. Use the `aliases` field to find alternati
 - `embeddings` - Text embeddings
 - `audio-input` - Audio understanding
 - `audio-output` - Speech synthesis
+- `mcp-servers` - Model Context Protocol (MCP) server support
 
 ## 🔄 Available Endpoints
 
