@@ -5,6 +5,64 @@ import { ModelInfo } from '../types';
  * Updated with latest models and pricing
  */
 export const OPENAI_MODELS: ModelInfo[] = [
+  // GPT-5.1 Series (Latest - November 2025)
+  {
+    id: 'gpt-5.1-instant',
+    aliases: ['gpt-5.1', 'gpt-5-1-instant'],
+    name: 'GPT-5.1 Instant',
+    provider: 'openai',
+    releaseDate: '2025-11-12',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'reasoning',
+    ],
+    tags: ['flagship', 'fast', 'reasoning'],
+    limits: {
+      contextWindow: 200000,
+      maxOutputTokens: 32768,
+    },
+    pricing: {
+      input: 1.5,
+      output: 12.0,
+    },
+    description: 'Most-used model with adaptive reasoning, warmer and more intelligent',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-1',
+  },
+  {
+    id: 'gpt-5.1-thinking',
+    aliases: ['gpt-5-1-thinking'],
+    name: 'GPT-5.1 Thinking',
+    provider: 'openai',
+    releaseDate: '2025-11-12',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'reasoning',
+    ],
+    tags: ['flagship', 'reasoning', 'coding'],
+    limits: {
+      contextWindow: 200000,
+      maxOutputTokens: 64000,
+    },
+    pricing: {
+      input: 2.5,
+      output: 20.0,
+    },
+    description: 'Advanced reasoning model, easier to understand and faster on simple tasks',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-1',
+  },
+
   // GPT-5 Series
   {
     id: 'gpt-5-2025-08-07',
@@ -290,5 +348,66 @@ export const OPENAI_MODELS: ModelInfo[] = [
     deprecationDate: '2023-07-06',
     shutdownDate: '2024-01-04',
     replacementModel: 'gpt-3.5-turbo-instruct',
+  },
+
+  // Embedding Models
+  {
+    id: 'text-embedding-3-large',
+    name: 'Text Embedding 3 Large',
+    provider: 'openai',
+    releaseDate: '2024-01-25',
+    status: 'stable',
+    capabilities: ['embeddings'],
+    tags: ['flagship'],
+    limits: {
+      contextWindow: 8191,
+      maxOutputTokens: 0,
+    },
+    pricing: {
+      input: 0.13,
+      output: 0.0,
+    },
+    description: 'Most capable embedding model, 3072 dimensions, improved performance',
+    docsUrl: 'https://platform.openai.com/docs/models/embeddings',
+  },
+  {
+    id: 'text-embedding-3-small',
+    name: 'Text Embedding 3 Small',
+    provider: 'openai',
+    releaseDate: '2024-01-25',
+    status: 'stable',
+    capabilities: ['embeddings'],
+    tags: ['cost-effective', 'fast'],
+    limits: {
+      contextWindow: 8191,
+      maxOutputTokens: 0,
+    },
+    pricing: {
+      input: 0.02,
+      output: 0.0,
+    },
+    description: 'Efficient embedding model, 1536 dimensions, 5x cheaper than ada-002',
+    docsUrl: 'https://platform.openai.com/docs/models/embeddings',
+  },
+  {
+    id: 'text-embedding-ada-002',
+    name: 'Text Embedding Ada 002',
+    provider: 'openai',
+    releaseDate: '2022-12-15',
+    status: 'stable',
+    capabilities: ['embeddings'],
+    tags: ['deprecated'],
+    limits: {
+      contextWindow: 8191,
+      maxOutputTokens: 0,
+    },
+    pricing: {
+      input: 0.10,
+      output: 0.0,
+    },
+    description: 'Legacy embedding model, 1536 dimensions, replaced by v3 models',
+    docsUrl: 'https://platform.openai.com/docs/models/embeddings',
+    deprecationDate: '2024-01-25',
+    replacementModel: 'text-embedding-3-small',
   },
 ];

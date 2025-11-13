@@ -20,7 +20,8 @@ export type ModelCapability =
   | 'reasoning'
   | 'embeddings'
   | 'audio-input'
-  | 'audio-output';
+  | 'audio-output'
+  | 'mcp-servers';
 
 /**
  * Model tags for categorization

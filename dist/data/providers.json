@@ -56,6 +56,78 @@
     ]
   },
   {
+    "id": "xai",
+    "name": "xAI",
+    "website": "https://x.ai",
+    "apiBaseUrl": "https://api.x.ai/v1",
+    "apiDocsUrl": "https://docs.x.ai/docs",
+    "icon": "𝕏",
+    "color": "#000000",
+    "description": "Elon Musk's AI company with Grok models and real-time X data access",
+    "features": [
+      "Chat completion",
+      "Code generation",
+      "Vision",
+      "Function calling",
+      "Real-time X (Twitter) data"
+    ]
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai",
+    "apiBaseUrl": "https://api.mistral.ai/v1",
+    "apiDocsUrl": "https://docs.mistral.ai",
+    "icon": "🌪️",
+    "color": "#f2a73b",
+    "description": "French AI company with Mistral and Mixtral mixture-of-experts models",
+    "features": [
+      "Chat completion",
+      "Code generation",
+      "Function calling",
+      "JSON mode",
+      "Mixture of experts architecture",
+      "Competitive pricing"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "website": "https://llama.meta.com",
+    "apiBaseUrl": "https://api.together.xyz/v1",
+    "apiDocsUrl": "https://llama.meta.com/docs",
+    "icon": "🦙",
+    "color": "#0668e1",
+    "description": "Meta's open-source Llama models, available via various cloud providers",
+    "features": [
+      "Chat completion",
+      "Code generation",
+      "Vision",
+      "Function calling",
+      "JSON mode",
+      "Open-source",
+      "Long context (128K tokens)"
+    ]
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "website": "https://deepseek.com",
+    "apiBaseUrl": "https://api.deepseek.com/v1",
+    "apiDocsUrl": "https://platform.deepseek.com/api-docs",
+    "icon": "🔍",
+    "color": "#00a6fb",
+    "description": "Chinese AI company with highly competitive pricing and strong coding capabilities",
+    "features": [
+      "Chat completion",
+      "Code generation",
+      "Reasoning",
+      "Function calling",
+      "JSON mode",
+      "Extremely cost-effective"
+    ]
+  },
+  {
     "id": "zai",
     "name": "Z.AI",
     "website": "https://z.ai",

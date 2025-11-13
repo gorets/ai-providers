@@ -1,6 +1,10 @@
 [
   {
-    "id": "claude-haiku-4-5-20251001",
+    "id": "claude-haiku-4-5",
+    "aliases": [
+      "claude-haiku-4-5-20251001",
+      "claude-haiku-4.5"
+    ],
     "name": "Claude Haiku 4.5",
     "provider": "anthropic",
     "releaseDate": "2025-10-01",
@@ -11,7 +15,8 @@
       "vision",
       "function-calling",
       "streaming",
-      "json-mode"
+      "json-mode",
+      "mcp-servers"
     ],
     "tags": [
       "fast",
@@ -26,11 +31,15 @@
       "output": 5,
       "cachedInput": 0.1
     },
-    "description": "2x faster than Sonnet, ultra-cheap with prompt caching",
+    "description": "2x faster than Sonnet, ultra-cheap with prompt caching, supports MCP",
     "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
   },
   {
-    "id": "claude-sonnet-4-5-20250929",
+    "id": "claude-sonnet-4-5",
+    "aliases": [
+      "claude-sonnet-4-5-20250929",
+      "claude-sonnet-4.5"
+    ],
     "name": "Claude Sonnet 4.5",
     "provider": "anthropic",
     "releaseDate": "2025-09-29",
@@ -42,7 +51,8 @@
       "function-calling",
       "streaming",
       "json-mode",
-      "code-generation"
+      "code-generation",
+      "mcp-servers"
     ],
     "tags": [
       "balanced",
@@ -58,11 +68,15 @@
       "output": 15,
       "cachedInput": 0.3
     },
-    "description": "Latest Claude, balanced performance with excellent coding abilities",
+    "description": "Latest Claude, balanced performance with excellent coding and MCP support",
     "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
   },
   {
-    "id": "claude-opus-4-1",
+    "id": "claude-opus-4",
+    "aliases": [
+      "claude-opus-4-1",
+      "claude-opus"
+    ],
     "name": "Claude Opus 4.1",
     "provider": "anthropic",
     "releaseDate": "2025-05-15",
@@ -75,7 +89,8 @@
       "streaming",
       "json-mode",
       "reasoning",
-      "code-generation"
+      "code-generation",
+      "mcp-servers"
     ],
     "tags": [
       "flagship",
@@ -92,7 +107,7 @@
       "output": 75,
       "cachedInput": 1.5
     },
-    "description": "Most powerful Claude for complex reasoning and analysis tasks",
+    "description": "Most powerful Claude for complex reasoning, analysis, and MCP servers",
     "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
   },
   {

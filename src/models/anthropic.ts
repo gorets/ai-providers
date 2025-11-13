@@ -7,8 +7,8 @@ import { ModelInfo } from '../types';
 export const ANTHROPIC_MODELS: ModelInfo[] = [
   // Claude 4.5 Series
   {
-    id: 'claude-haiku-4-5-20251001',
-    aliases: ['claude-haiku-4-5', 'claude-haiku-4.5'],
+    id: 'claude-haiku-4-5',
+    aliases: ['claude-haiku-4-5-20251001', 'claude-haiku-4.5'],
     name: 'Claude Haiku 4.5',
     provider: 'anthropic',
     releaseDate: '2025-10-01',
@@ -20,6 +20,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
       'function-calling',
       'streaming',
       'json-mode',
+      'mcp-servers',
     ],
     tags: ['fast', 'cost-effective'],
     limits: {
@@ -31,12 +32,12 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
       output: 5.0,
       cachedInput: 0.1,
     },
-    description: '2x faster than Sonnet, ultra-cheap with prompt caching',
+    description: '2x faster than Sonnet, ultra-cheap with prompt caching, supports MCP',
     docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
   },
   {
-    id: 'claude-sonnet-4-5-20250929',
-    aliases: ['claude-sonnet-4-5', 'claude-sonnet-4.5'],
+    id: 'claude-sonnet-4-5',
+    aliases: ['claude-sonnet-4-5-20250929', 'claude-sonnet-4.5'],
     name: 'Claude Sonnet 4.5',
     provider: 'anthropic',
     releaseDate: '2025-09-29',
@@ -49,6 +50,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
       'streaming',
       'json-mode',
       'code-generation',
+      'mcp-servers',
     ],
     tags: ['balanced', 'coding', 'multimodal'],
     limits: {
@@ -60,12 +62,12 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
       output: 15.0,
       cachedInput: 0.3,
     },
-    description: 'Latest Claude, balanced performance with excellent coding abilities',
+    description: 'Latest Claude, balanced performance with excellent coding and MCP support',
     docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
   },
   {
-    id: 'claude-opus-4-1',
-    aliases: ['claude-opus-4', 'claude-opus'],
+    id: 'claude-opus-4',
+    aliases: ['claude-opus-4-1', 'claude-opus'],
     name: 'Claude Opus 4.1',
     provider: 'anthropic',
     releaseDate: '2025-05-15',
@@ -79,6 +81,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
       'json-mode',
       'reasoning',
       'code-generation',
+      'mcp-servers',
     ],
     tags: ['flagship', 'reasoning', 'multimodal', 'coding'],
     limits: {
@@ -90,7 +93,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
       output: 75.0,
       cachedInput: 1.5,
     },
-    description: 'Most powerful Claude for complex reasoning and analysis tasks',
+    description: 'Most powerful Claude for complex reasoning, analysis, and MCP servers',
     docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
   },
 
@@ -179,7 +182,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
     description: 'Original Claude 3 Opus, replaced by Claude Opus 4.1',
     docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
     deprecationDate: '2025-05-15',
-    replacementModel: 'claude-opus-4-1',
+    replacementModel: 'claude-opus-4',
   },
   {
     id: 'claude-3-sonnet-20240229',

@@ -36,7 +36,7 @@ console.log();
 // Example 2: Calculate cost with caching (for Anthropic models)
 console.log('2. Calculate Cost with Prompt Caching:');
 const costWithCache = calculateCostWithCache(
-  'claude-sonnet-4-5-20250929',
+  'claude-sonnet-4-5',
   50000,  // new input tokens
   200000, // cached input tokens
   10000   // output tokens
