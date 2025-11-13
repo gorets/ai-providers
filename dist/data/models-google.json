@@ -223,5 +223,117 @@
     },
     "description": "Previous generation Pro with 2M context",
     "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-1.0-pro",
+    "name": "Gemini 1.0 Pro",
+    "provider": "google",
+    "releaseDate": "2023-12-06",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 32760,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 1.5
+    },
+    "description": "Original Gemini Pro, replaced by Gemini 1.5 Pro",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini",
+    "deprecationDate": "2024-05-14",
+    "replacementModel": "gemini-1.5-pro"
+  },
+  {
+    "id": "gemini-1.0-pro-vision",
+    "name": "Gemini 1.0 Pro Vision",
+    "provider": "google",
+    "releaseDate": "2023-12-13",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 16384,
+      "maxOutputTokens": 2048
+    },
+    "pricing": {
+      "input": 0.25,
+      "output": 0.5
+    },
+    "description": "Original Gemini Pro with vision, replaced by Gemini 1.5 Pro",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini",
+    "deprecationDate": "2024-05-14",
+    "shutdownDate": "2024-10-15",
+    "replacementModel": "gemini-1.5-flash"
+  },
+  {
+    "id": "text-bison-001",
+    "name": "PaLM 2 Text Bison",
+    "provider": "google",
+    "releaseDate": "2023-05-10",
+    "status": "disabled",
+    "capabilities": [
+      "text-generation"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8196,
+      "maxOutputTokens": 1024
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 0.5
+    },
+    "description": "Legacy PaLM 2 model, shut down in favor of Gemini",
+    "docsUrl": "https://ai.google.dev/palm_docs/deprecation",
+    "deprecationDate": "2023-12-06",
+    "shutdownDate": "2024-10-09",
+    "replacementModel": "gemini-1.5-flash"
+  },
+  {
+    "id": "chat-bison-001",
+    "name": "PaLM 2 Chat Bison",
+    "provider": "google",
+    "releaseDate": "2023-05-10",
+    "status": "disabled",
+    "capabilities": [
+      "chat",
+      "text-generation"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8196,
+      "maxOutputTokens": 1024
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 0.5
+    },
+    "description": "Legacy PaLM 2 chat model, shut down in favor of Gemini",
+    "docsUrl": "https://ai.google.dev/palm_docs/deprecation",
+    "deprecationDate": "2023-12-06",
+    "shutdownDate": "2024-10-09",
+    "replacementModel": "gemini-1.5-flash"
   }
 ]
