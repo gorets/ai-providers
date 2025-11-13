@@ -6,6 +6,7 @@
 export * from './types';
 export * from './providers';
 export * from './models';
+export * from './utils';
 
 import { PROVIDERS } from './providers';
 import { ALL_MODELS } from './models';

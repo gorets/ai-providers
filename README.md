@@ -62,6 +62,102 @@ const visionModels = getModelsByCapability('vision');
 const reasoningModels = getModelsByTag('reasoning');
 ```
 
+### Utility Functions
+
+The library includes powerful helper functions for common tasks:
+
+#### Cost Calculation
+
+```typescript
+import { calculateCost, calculateCostWithCache, compareCosts } from '@gorets/ai-providers';
+
+// Calculate cost for specific usage
+const cost = calculateCost('gpt-4o-mini-2024-07-18', 50000, 10000);
+console.log(`Total cost: $${cost.totalCost.toFixed(4)}`);
+
+// Calculate with prompt caching (Anthropic models)
+const costWithCache = calculateCostWithCache(
+  'claude-sonnet-4-5-20250929',
+  50000,   // new input tokens
+  200000,  // cached input tokens
+  10000    // output tokens
+);
+
+// Compare costs across multiple models
+const comparison = compareCosts(
+  ['gpt-4o-mini-2024-07-18', 'claude-haiku-4-5-20251001', 'gemini-2.5-flash'],
+  100000,
+  20000
+);
+```
+
+#### Advanced Search
+
+```typescript
+import { searchModels, getCheapestModel, getRecommendedModels } from '@gorets/ai-providers';
+
+// Search with multiple criteria
+const results = searchModels({
+  provider: 'openai',
+  capabilities: ['vision', 'function-calling'],
+  maxPrice: 3.0,
+  minContextWindow: 100000,
+});
+
+// Find cheapest model with specific requirements
+const cheapest = getCheapestModel({
+  capabilities: ['vision', 'chat'],
+  activeOnly: true,
+});
+
+// Get recommended models for a use case
+const recommended = getRecommendedModels({
+  budget: 'low',
+  priority: 'speed',
+  capabilities: ['chat', 'function-calling'],
+});
+```
+
+#### Deprecation Management
+
+```typescript
+import {
+  isModelDeprecated,
+  getReplacementModel,
+  getModelsShuttingDownSoon,
+  getActiveModels
+} from '@gorets/ai-providers';
+
+// Check if model is deprecated
+const status = isModelDeprecated('gpt-3.5-turbo-0125');
+if (status.isDeprecated) {
+  console.log(`Deprecated on: ${status.deprecationDate}`);
+  console.log(`Shuts down: ${status.shutdownDate}`);
+
+  // Get replacement model
+  const replacement = getReplacementModel('gpt-3.5-turbo-0125');
+  console.log(`Use instead: ${replacement.name}`);
+}
+
+// Find models shutting down in next 90 days
+const shuttingDown = getModelsShuttingDownSoon(90);
+
+// Get only active models
+const activeModels = getActiveModels();
+```
+
+#### Context and Features
+
+```typescript
+import { getModelsWithLargestContext, getModelById } from '@gorets/ai-providers';
+
+// Find models with largest context windows
+const largestContext = getModelsWithLargestContext(5);
+
+// Search by alias
+const model = getModelById('claude-sonnet-4-5'); // Works with aliases!
+```
+
 ### Direct JSON Access (No Installation Required)
 
 You can access the latest data directly from GitHub:
@@ -107,10 +203,11 @@ interface ProviderInfo {
 ```typescript
 interface ModelInfo {
   id: string;                    // Model identifier for API calls
+  aliases?: string[];            // Alternative IDs (e.g., 'claude-sonnet-4-5' for 'claude-sonnet-4-5-20250929')
   name: string;                  // Human-readable name
   provider: string;              // Provider ID
   releaseDate?: string;          // ISO 8601 date
-  status: 'stable' | 'beta' | 'experimental' | 'deprecated' | 'preview';
+  status: 'stable' | 'beta' | 'experimental' | 'deprecated' | 'disabled' | 'preview';
   capabilities: string[];        // e.g., ['chat', 'vision', 'function-calling']
   tags: string[];                // e.g., ['fast', 'cost-effective']
   limits: {
@@ -124,6 +221,9 @@ interface ModelInfo {
   };
   description?: string;
   docsUrl?: string;
+  deprecationDate?: string;      // When model was deprecated (ISO 8601)
+  shutdownDate?: string;         // When model stops working (ISO 8601)
+  replacementModel?: string;     // ID of replacement model
 }
 ```
 
@@ -139,6 +239,33 @@ interface ModelInfo {
 - `reasoning` - Enhanced reasoning capabilities
 - `coding` - Optimized for code generation
 - `deprecated` - No longer recommended for new projects
+
+## 📊 Model Status
+
+Models go through different lifecycle stages:
+
+- `stable` - Production-ready, fully supported
+- `beta` - Feature-complete but may have minor issues
+- `experimental` - Early access, may change significantly
+- `preview` - Pre-release version for testing
+- `deprecated` - Still works but superseded by newer models
+- `disabled` - No longer available, API calls will fail
+
+**Deprecated Models:**
+When a model is deprecated, check these fields:
+- `deprecationDate` - When it was marked as deprecated
+- `shutdownDate` - When it will stop working (if known)
+- `replacementModel` - Recommended model to migrate to
+
+**Model Aliases:**
+Some models have multiple identifiers. Use the `aliases` field to find alternative IDs:
+```typescript
+{
+  id: 'claude-sonnet-4-5-20250929',
+  aliases: ['claude-sonnet-4-5', 'claude-sonnet-4.5'],
+  // ... other fields
+}
+```
 
 ## 🎯 Model Capabilities
 

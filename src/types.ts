@@ -3,7 +3,7 @@
  * Comprehensive type definitions for AI model providers, models, and capabilities
  */
 
-export type LLMProvider = 'openai' | 'anthropic' | 'google' | 'mistral' | 'cohere' | 'meta' | 'deepseek';
+export type LLMProvider = 'openai' | 'anthropic' | 'google' | 'xai' | 'mistral' | 'cohere' | 'meta' | 'deepseek';
 
 /**
  * Model capabilities and features
@@ -40,7 +40,7 @@ export type ModelTag =
 /**
  * Model status in lifecycle
  */
-export type ModelStatus = 'stable' | 'beta' | 'experimental' | 'deprecated' | 'preview';
+export type ModelStatus = 'stable' | 'beta' | 'experimental' | 'deprecated' | 'disabled' | 'preview';
 
 /**
  * Pricing structure for a model
@@ -78,6 +78,8 @@ export interface ModelLimits {
 export interface ModelInfo {
   /** Unique model identifier (as used in API calls) */
   id: string;
+  /** Alternative IDs/aliases for this model (e.g., short names without dates) */
+  aliases?: string[];
   /** Human-readable model name */
   name: string;
   /** Provider of the model */
@@ -100,6 +102,10 @@ export interface ModelInfo {
   docsUrl?: string;
   /** Deprecation date (ISO 8601 format, if applicable) */
   deprecationDate?: string;
+  /** Shutdown/disabled date (ISO 8601 format, when model stops working) */
+  shutdownDate?: string;
+  /** ID of the replacement model (if deprecated/disabled) */
+  replacementModel?: string;
 }
 
 /**
@@ -112,8 +118,12 @@ export interface ProviderInfo {
   name: string;
   /** Provider website */
   website: string;
+  /** API base URL */
+  apiBaseUrl: string;
   /** API documentation URL */
   apiDocsUrl: string;
+  /** API endpoint to fetch models list (if available) */
+  modelsEndpoint?: string;
   /** Icon/logo identifier (emoji or URL) */
   icon: string;
   /** Brand color (hex) */

@@ -8,6 +8,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
   // Claude 4.5 Series
   {
     id: 'claude-haiku-4-5-20251001',
+    aliases: ['claude-haiku-4-5', 'claude-haiku-4.5'],
     name: 'Claude Haiku 4.5',
     provider: 'anthropic',
     releaseDate: '2025-10-01',
@@ -35,6 +36,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
   },
   {
     id: 'claude-sonnet-4-5-20250929',
+    aliases: ['claude-sonnet-4-5', 'claude-sonnet-4.5'],
     name: 'Claude Sonnet 4.5',
     provider: 'anthropic',
     releaseDate: '2025-09-29',
@@ -63,6 +65,7 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
   },
   {
     id: 'claude-opus-4-1',
+    aliases: ['claude-opus-4', 'claude-opus'],
     name: 'Claude Opus 4.1',
     provider: 'anthropic',
     releaseDate: '2025-05-15',
@@ -146,5 +149,118 @@ export const ANTHROPIC_MODELS: ModelInfo[] = [
     },
     description: 'Fast and affordable Claude 3.5 variant',
     docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+  },
+
+  // Claude 3.0 Series (Deprecated)
+  {
+    id: 'claude-3-opus-20240229',
+    name: 'Claude 3 Opus',
+    provider: 'anthropic',
+    releaseDate: '2024-02-29',
+    status: 'deprecated',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'function-calling',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['deprecated', 'multimodal'],
+    limits: {
+      contextWindow: 200000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 15.0,
+      output: 75.0,
+      cachedInput: 1.5,
+    },
+    description: 'Original Claude 3 Opus, replaced by Claude Opus 4.1',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+    deprecationDate: '2025-05-15',
+    replacementModel: 'claude-opus-4-1',
+  },
+  {
+    id: 'claude-3-sonnet-20240229',
+    name: 'Claude 3 Sonnet',
+    provider: 'anthropic',
+    releaseDate: '2024-02-29',
+    status: 'deprecated',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'function-calling',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['deprecated', 'multimodal'],
+    limits: {
+      contextWindow: 200000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 3.0,
+      output: 15.0,
+      cachedInput: 0.3,
+    },
+    description: 'Original Claude 3 Sonnet, superseded by Claude 3.5 Sonnet',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+    deprecationDate: '2024-06-20',
+    replacementModel: 'claude-3-5-sonnet-20241022',
+  },
+  {
+    id: 'claude-3-haiku-20240307',
+    name: 'Claude 3 Haiku',
+    provider: 'anthropic',
+    releaseDate: '2024-03-07',
+    status: 'deprecated',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'function-calling',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['deprecated', 'fast'],
+    limits: {
+      contextWindow: 200000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 0.25,
+      output: 1.25,
+      cachedInput: 0.03,
+    },
+    description: 'Original Claude 3 Haiku, replaced by Claude 3.5 Haiku',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+    deprecationDate: '2024-10-22',
+    replacementModel: 'claude-3-5-haiku-20241022',
+  },
+
+  // Claude 2.x Series (Legacy)
+  {
+    id: 'claude-2.1',
+    name: 'Claude 2.1',
+    provider: 'anthropic',
+    releaseDate: '2023-11-21',
+    status: 'disabled',
+    capabilities: ['text-generation', 'chat', 'streaming'],
+    tags: ['deprecated'],
+    limits: {
+      contextWindow: 200000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 8.0,
+      output: 24.0,
+    },
+    description: 'Legacy Claude 2.1, disabled in favor of Claude 3+',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+    deprecationDate: '2024-02-29',
+    shutdownDate: '2024-07-01',
+    replacementModel: 'claude-3-sonnet-20240229',
   },
 ];
