@@ -3,7 +3,7 @@
  * Comprehensive type definitions for AI model providers, models, and capabilities
  */
 
-export type LLMProvider = 'openai' | 'anthropic' | 'google' | 'xai' | 'mistral' | 'cohere' | 'meta' | 'deepseek';
+export type LLMProvider = 'openai' | 'anthropic' | 'google' | 'xai' | 'mistral' | 'meta' | 'deepseek' | 'zai';
 
 /**
  * Model capabilities and features
