@@ -1,0 +1,384 @@
+/**
+ * Standalone JSON generator without TypeScript compilation
+ * This script generates JSON files directly from the data
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// Define data inline to avoid TypeScript compilation
+const VERSION = '1.0.0';
+
+const PROVIDERS = [
+  {
+    id: 'openai',
+    name: 'OpenAI',
+    website: 'https://openai.com',
+    apiDocsUrl: 'https://platform.openai.com/docs',
+    icon: '🤖',
+    color: '#10a37f',
+    description: 'Leading AI research company, creators of GPT models and ChatGPT',
+    features: [
+      'Chat completion',
+      'Text generation',
+      'Code generation',
+      'Vision',
+      'Function calling',
+      'JSON mode',
+      'Audio (Whisper)',
+      'Image generation (DALL-E)',
+      'Embeddings',
+    ],
+  },
+  {
+    id: 'anthropic',
+    name: 'Anthropic',
+    website: 'https://anthropic.com',
+    apiDocsUrl: 'https://docs.anthropic.com',
+    icon: '🧠',
+    color: '#cc785c',
+    description: 'AI safety company, creators of Claude models with strong reasoning capabilities',
+    features: [
+      'Chat completion',
+      'Extended reasoning',
+      'Vision',
+      'Function calling',
+      'JSON mode',
+      'Prompt caching',
+      'Extended context (200K tokens)',
+    ],
+  },
+  {
+    id: 'google',
+    name: 'Google AI',
+    website: 'https://ai.google.dev',
+    apiDocsUrl: 'https://ai.google.dev/docs',
+    icon: '🔷',
+    color: '#4285f4',
+    description: 'Google\'s AI division, creators of Gemini models with massive context windows',
+    features: [
+      'Chat completion',
+      'Vision',
+      'Audio input',
+      'Function calling',
+      'JSON mode',
+      'Extended context (up to 2M tokens)',
+      'Grounding with Google Search',
+    ],
+  },
+];
+
+const OPENAI_MODELS = [
+  {
+    id: 'gpt-5-2025-08-07',
+    name: 'GPT-5',
+    provider: 'openai',
+    releaseDate: '2025-08-07',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'code-generation', 'function-calling', 'streaming', 'json-mode', 'reasoning'],
+    tags: ['flagship', 'reasoning', 'coding'],
+    limits: { contextWindow: 200000, maxOutputTokens: 32768 },
+    pricing: { input: 1.25, output: 10.0 },
+    description: 'Smartest frontier model with configurable reasoning',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5',
+  },
+  {
+    id: 'gpt-5-mini-2025-08-07',
+    name: 'GPT-5 Mini',
+    provider: 'openai',
+    releaseDate: '2025-08-07',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'code-generation', 'function-calling', 'streaming', 'json-mode', 'reasoning'],
+    tags: ['balanced', 'fast', 'reasoning'],
+    limits: { contextWindow: 128000, maxOutputTokens: 16384 },
+    pricing: { input: 0.25, output: 2.0 },
+    description: 'Balanced performance and cost',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-mini',
+  },
+  {
+    id: 'gpt-5-nano-2025-08-07',
+    name: 'GPT-5 Nano',
+    provider: 'openai',
+    releaseDate: '2025-08-07',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'code-generation', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['fast', 'cost-effective'],
+    limits: { contextWindow: 128000, maxOutputTokens: 16384 },
+    pricing: { input: 0.05, output: 0.4 },
+    description: 'Fastest, most cost-efficient version of GPT-5',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-nano',
+  },
+  {
+    id: 'gpt-4o-2024-08-06',
+    name: 'GPT-4o',
+    provider: 'openai',
+    releaseDate: '2024-08-06',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'code-generation', 'vision', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['multimodal', 'coding'],
+    limits: { contextWindow: 128000, maxOutputTokens: 16384 },
+    pricing: { input: 2.5, output: 10.0 },
+    description: 'Most capable GPT-4o, best for complex tasks',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-4o',
+  },
+  {
+    id: 'gpt-4o-mini-2024-07-18',
+    name: 'GPT-4o Mini',
+    provider: 'openai',
+    releaseDate: '2024-07-18',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'code-generation', 'vision', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['fast', 'cost-effective', 'multimodal'],
+    limits: { contextWindow: 128000, maxOutputTokens: 16384 },
+    pricing: { input: 0.15, output: 0.6 },
+    description: 'Fast and affordable, good for most tasks',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-4o-mini',
+  },
+  {
+    id: 'o1-2024-12-17',
+    name: 'O1',
+    provider: 'openai',
+    releaseDate: '2024-12-17',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'reasoning', 'code-generation'],
+    tags: ['reasoning', 'flagship', 'coding'],
+    limits: { contextWindow: 200000, maxOutputTokens: 100000 },
+    pricing: { input: 15.0, output: 60.0 },
+    description: 'Most advanced reasoning model for complex problem-solving',
+    docsUrl: 'https://platform.openai.com/docs/models/o1',
+  },
+  {
+    id: 'o1-mini-2024-09-12',
+    name: 'O1 Mini',
+    provider: 'openai',
+    releaseDate: '2024-09-12',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'reasoning', 'code-generation'],
+    tags: ['reasoning', 'cost-effective', 'coding'],
+    limits: { contextWindow: 128000, maxOutputTokens: 65536 },
+    pricing: { input: 3.0, output: 12.0 },
+    description: 'Faster and cheaper reasoning model',
+    docsUrl: 'https://platform.openai.com/docs/models/o1-mini',
+  },
+];
+
+const ANTHROPIC_MODELS = [
+  {
+    id: 'claude-haiku-4-5-20251001',
+    name: 'Claude Haiku 4.5',
+    provider: 'anthropic',
+    releaseDate: '2025-10-01',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['fast', 'cost-effective'],
+    limits: { contextWindow: 200000, maxOutputTokens: 8192 },
+    pricing: { input: 1.0, output: 5.0, cachedInput: 0.1 },
+    description: '2x faster than Sonnet, ultra-cheap with prompt caching',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+  },
+  {
+    id: 'claude-sonnet-4-5-20250929',
+    name: 'Claude Sonnet 4.5',
+    provider: 'anthropic',
+    releaseDate: '2025-09-29',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode', 'code-generation'],
+    tags: ['balanced', 'coding', 'multimodal'],
+    limits: { contextWindow: 200000, maxOutputTokens: 8192 },
+    pricing: { input: 3.0, output: 15.0, cachedInput: 0.3 },
+    description: 'Latest Claude, balanced performance with excellent coding abilities',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+  },
+  {
+    id: 'claude-opus-4-1',
+    name: 'Claude Opus 4.1',
+    provider: 'anthropic',
+    releaseDate: '2025-05-15',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode', 'reasoning', 'code-generation'],
+    tags: ['flagship', 'reasoning', 'multimodal', 'coding'],
+    limits: { contextWindow: 200000, maxOutputTokens: 8192 },
+    pricing: { input: 15.0, output: 75.0, cachedInput: 1.5 },
+    description: 'Most powerful Claude for complex reasoning and analysis tasks',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+  },
+  {
+    id: 'claude-3-5-sonnet-20241022',
+    name: 'Claude 3.5 Sonnet',
+    provider: 'anthropic',
+    releaseDate: '2024-10-22',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode', 'code-generation'],
+    tags: ['balanced', 'coding', 'multimodal'],
+    limits: { contextWindow: 200000, maxOutputTokens: 8192 },
+    pricing: { input: 3.0, output: 15.0, cachedInput: 0.3 },
+    description: 'Previous generation Claude 3.5, still excellent for most tasks',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+  },
+  {
+    id: 'claude-3-5-haiku-20241022',
+    name: 'Claude 3.5 Haiku',
+    provider: 'anthropic',
+    releaseDate: '2024-10-22',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['fast', 'cost-effective'],
+    limits: { contextWindow: 200000, maxOutputTokens: 8192 },
+    pricing: { input: 0.8, output: 4.0, cachedInput: 0.08 },
+    description: 'Fast and affordable Claude 3.5 variant',
+    docsUrl: 'https://docs.anthropic.com/en/docs/models-overview',
+  },
+];
+
+const GOOGLE_MODELS = [
+  {
+    id: 'gemini-2.5-flash',
+    name: 'Gemini 2.5 Flash',
+    provider: 'google',
+    releaseDate: '2025-02-15',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'audio-input', 'function-calling', 'streaming', 'json-mode', 'code-generation'],
+    tags: ['fast', 'cost-effective', 'multimodal', 'long-context'],
+    limits: { contextWindow: 1000000, maxOutputTokens: 8192 },
+    pricing: { input: 0.35, output: 1.05 },
+    description: 'Latest stable, fast and affordable with 1M token context',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+  },
+  {
+    id: 'gemini-2.5-pro',
+    name: 'Gemini 2.5 Pro',
+    provider: 'google',
+    releaseDate: '2025-03-01',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'audio-input', 'function-calling', 'streaming', 'json-mode', 'code-generation', 'reasoning'],
+    tags: ['flagship', 'long-context', 'multimodal', 'reasoning'],
+    limits: { contextWindow: 2000000, maxOutputTokens: 8192 },
+    pricing: { input: 1.25, output: 5.0 },
+    description: 'Most capable Gemini with massive 2M token context window',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+  },
+  {
+    id: 'gemini-2.0-flash-exp',
+    name: 'Gemini 2.0 Flash Exp',
+    provider: 'google',
+    releaseDate: '2024-12-11',
+    status: 'experimental',
+    capabilities: ['text-generation', 'chat', 'vision', 'audio-input', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['experimental', 'fast', 'multimodal'],
+    limits: { contextWindow: 1000000, maxOutputTokens: 8192 },
+    pricing: { input: 0.0, output: 0.0 },
+    description: 'Experimental version, free preview',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
+  },
+  {
+    id: 'gemini-flash-latest',
+    name: 'Gemini Flash (Latest)',
+    provider: 'google',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'audio-input', 'function-calling', 'streaming', 'json-mode', 'code-generation'],
+    tags: ['fast', 'cost-effective', 'multimodal', 'long-context'],
+    limits: { contextWindow: 1000000, maxOutputTokens: 8192 },
+    pricing: { input: 0.35, output: 1.05 },
+    description: 'Auto-updated to latest stable Flash version (currently 2.5)',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+  },
+  {
+    id: 'gemini-pro-latest',
+    name: 'Gemini Pro (Latest)',
+    provider: 'google',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'audio-input', 'function-calling', 'streaming', 'json-mode', 'code-generation', 'reasoning'],
+    tags: ['flagship', 'long-context', 'multimodal', 'reasoning'],
+    limits: { contextWindow: 2000000, maxOutputTokens: 8192 },
+    pricing: { input: 1.25, output: 5.0 },
+    description: 'Auto-updated to latest stable Pro version (currently 2.5)',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+  },
+  {
+    id: 'gemini-1.5-flash',
+    name: 'Gemini 1.5 Flash',
+    provider: 'google',
+    releaseDate: '2024-05-14',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode'],
+    tags: ['fast', 'cost-effective', 'multimodal', 'long-context'],
+    limits: { contextWindow: 1000000, maxOutputTokens: 8192 },
+    pricing: { input: 0.35, output: 1.05 },
+    description: 'Previous generation Flash, still excellent',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+  },
+  {
+    id: 'gemini-1.5-pro',
+    name: 'Gemini 1.5 Pro',
+    provider: 'google',
+    releaseDate: '2024-05-14',
+    status: 'stable',
+    capabilities: ['text-generation', 'chat', 'vision', 'function-calling', 'streaming', 'json-mode', 'reasoning'],
+    tags: ['long-context', 'multimodal', 'reasoning'],
+    limits: { contextWindow: 2000000, maxOutputTokens: 8192 },
+    pricing: { input: 1.25, output: 5.0 },
+    description: 'Previous generation Pro with 2M context',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+  },
+];
+
+const ALL_MODELS = [...OPENAI_MODELS, ...ANTHROPIC_MODELS, ...GOOGLE_MODELS];
+
+// Create output directories
+const OUTPUT_DIR = path.join(__dirname, 'dist');
+const DATA_DIR = path.join(OUTPUT_DIR, 'data');
+
+if (!fs.existsSync(OUTPUT_DIR)) {
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+}
+
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+// Generate database
+const database = {
+  metadata: {
+    version: VERSION,
+    lastUpdated: new Date().toISOString().split('T')[0],
+    generatedAt: new Date().toISOString(),
+  },
+  providers: PROVIDERS,
+  models: ALL_MODELS,
+};
+
+// Write files
+fs.writeFileSync(
+  path.join(DATA_DIR, 'database.json'),
+  JSON.stringify(database, null, 2)
+);
+
+fs.writeFileSync(
+  path.join(DATA_DIR, 'providers.json'),
+  JSON.stringify(database.providers, null, 2)
+);
+
+fs.writeFileSync(
+  path.join(DATA_DIR, 'models.json'),
+  JSON.stringify(database.models, null, 2)
+);
+
+// Write models by provider
+PROVIDERS.forEach(provider => {
+  const providerModels = ALL_MODELS.filter(m => m.provider === provider.id);
+  fs.writeFileSync(
+    path.join(DATA_DIR, `models-${provider.id}.json`),
+    JSON.stringify(providerModels, null, 2)
+  );
+});
+
+fs.writeFileSync(
+  path.join(DATA_DIR, 'metadata.json'),
+  JSON.stringify(database.metadata, null, 2)
+);
+
+console.log('✅ JSON files generated successfully!');
+console.log(`📁 Output directory: ${DATA_DIR}`);
+console.log(`📊 Total providers: ${database.providers.length}`);
+console.log(`📊 Total models: ${database.models.length}`);
+console.log(`📅 Last updated: ${database.metadata.lastUpdated}`);

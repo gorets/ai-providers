@@ -1,0 +1,58 @@
+[
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "website": "https://openai.com",
+    "apiDocsUrl": "https://platform.openai.com/docs",
+    "icon": "🤖",
+    "color": "#10a37f",
+    "description": "Leading AI research company, creators of GPT models and ChatGPT",
+    "features": [
+      "Chat completion",
+      "Text generation",
+      "Code generation",
+      "Vision",
+      "Function calling",
+      "JSON mode",
+      "Audio (Whisper)",
+      "Image generation (DALL-E)",
+      "Embeddings"
+    ]
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "website": "https://anthropic.com",
+    "apiDocsUrl": "https://docs.anthropic.com",
+    "icon": "🧠",
+    "color": "#cc785c",
+    "description": "AI safety company, creators of Claude models with strong reasoning capabilities",
+    "features": [
+      "Chat completion",
+      "Extended reasoning",
+      "Vision",
+      "Function calling",
+      "JSON mode",
+      "Prompt caching",
+      "Extended context (200K tokens)"
+    ]
+  },
+  {
+    "id": "google",
+    "name": "Google AI",
+    "website": "https://ai.google.dev",
+    "apiDocsUrl": "https://ai.google.dev/docs",
+    "icon": "🔷",
+    "color": "#4285f4",
+    "description": "Google's AI division, creators of Gemini models with massive context windows",
+    "features": [
+      "Chat completion",
+      "Vision",
+      "Audio input",
+      "Function calling",
+      "JSON mode",
+      "Extended context (up to 2M tokens)",
+      "Grounding with Google Search"
+    ]
+  }
+]
