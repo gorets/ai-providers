@@ -7,6 +7,8 @@ dist/
 # IDE
 .vscode/
 .idea/
+.history/
+.cursor/
 
 # OS
 .DS_Store
