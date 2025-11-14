@@ -17,6 +17,7 @@ export interface ModelLimits {
 }
 export interface ModelInfo {
     id: string;
+    shortName?: string;
     aliases?: string[];
     name: string;
     provider: LLMProvider;

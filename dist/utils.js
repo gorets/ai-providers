@@ -53,7 +53,9 @@ function calculateCostWithCache(modelId, inputTokens, cachedInputTokens, outputT
     };
 }
 function getModelById(id) {
-    return index_1.ALL_MODELS.find((model) => model.id === id || model.aliases?.includes(id));
+    return index_1.ALL_MODELS.find((model) => model.id === id ||
+        model.shortName === id ||
+        model.aliases?.includes(id));
 }
 function getModelsByProvider(provider) {
     return index_1.ALL_MODELS.filter((model) => model.provider === provider);

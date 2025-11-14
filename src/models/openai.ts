@@ -40,7 +40,6 @@ export const OPENAI_MODELS: ModelInfo[] = [
   },
   {
     id: 'gpt-5.1-thinking',
-    shortName: 'gpt-5.1-thinking',
     aliases: ['gpt-5-1-thinking'],
     name: 'GPT-5.1 Thinking',
     provider: 'openai',

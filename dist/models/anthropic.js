@@ -94,6 +94,7 @@ exports.ANTHROPIC_MODELS = [
     },
     {
         id: 'claude-3-5-sonnet-20241022',
+        shortName: 'claude-3-5-sonnet',
         name: 'Claude 3.5 Sonnet',
         provider: 'anthropic',
         releaseDate: '2024-10-22',
@@ -122,6 +123,7 @@ exports.ANTHROPIC_MODELS = [
     },
     {
         id: 'claude-3-5-haiku-20241022',
+        shortName: 'claude-3-5-haiku',
         name: 'Claude 3.5 Haiku',
         provider: 'anthropic',
         releaseDate: '2024-10-22',
@@ -149,6 +151,7 @@ exports.ANTHROPIC_MODELS = [
     },
     {
         id: 'claude-3-opus-20240229',
+        shortName: 'claude-3-opus',
         name: 'Claude 3 Opus',
         provider: 'anthropic',
         releaseDate: '2024-02-29',
@@ -178,6 +181,7 @@ exports.ANTHROPIC_MODELS = [
     },
     {
         id: 'claude-3-sonnet-20240229',
+        shortName: 'claude-3-sonnet',
         name: 'Claude 3 Sonnet',
         provider: 'anthropic',
         releaseDate: '2024-02-29',
@@ -207,6 +211,7 @@ exports.ANTHROPIC_MODELS = [
     },
     {
         id: 'claude-3-haiku-20240307',
+        shortName: 'claude-3-haiku',
         name: 'Claude 3 Haiku',
         provider: 'anthropic',
         releaseDate: '2024-03-07',
