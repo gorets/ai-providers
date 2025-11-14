@@ -15,7 +15,7 @@ import type { AIProvidersDatabase } from './types';
 /**
  * Package version
  */
-export const VERSION = '1.0.0';
+export const VERSION = '1.0.1';
 
 /**
  * Get the complete database with all providers and models
