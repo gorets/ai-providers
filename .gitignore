@@ -1,2 +1,27 @@
-.history
-.cursor
+# Dependencies
+node_modules/
+
+# Build output
+dist
+
+# IDE
+.vscode/
+.idea/
+.history/
+.cursor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

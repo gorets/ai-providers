@@ -1,0 +1,1719 @@
+[
+  {
+    "id": "gpt-5.1-instant",
+    "shortName": "gpt-5.1",
+    "aliases": [
+      "gpt-5-1-instant"
+    ],
+    "name": "GPT-5.1 Instant",
+    "provider": "openai",
+    "releaseDate": "2025-11-12",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "reasoning"
+    ],
+    "tags": [
+      "flagship",
+      "fast",
+      "reasoning"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 32768
+    },
+    "pricing": {
+      "input": 1.5,
+      "output": 12
+    },
+    "description": "Most-used model with adaptive reasoning, warmer and more intelligent",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-5-1"
+  },
+  {
+    "id": "gpt-5.1-thinking",
+    "aliases": [
+      "gpt-5-1-thinking"
+    ],
+    "name": "GPT-5.1 Thinking",
+    "provider": "openai",
+    "releaseDate": "2025-11-12",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "reasoning"
+    ],
+    "tags": [
+      "flagship",
+      "reasoning",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000
+    },
+    "pricing": {
+      "input": 2.5,
+      "output": 20
+    },
+    "description": "Advanced reasoning model, easier to understand and faster on simple tasks",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-5-1"
+  },
+  {
+    "id": "gpt-5-2025-08-07",
+    "shortName": "gpt-5",
+    "name": "GPT-5",
+    "provider": "openai",
+    "releaseDate": "2025-08-07",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "reasoning"
+    ],
+    "tags": [
+      "flagship",
+      "reasoning",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 32768
+    },
+    "pricing": {
+      "input": 1.25,
+      "output": 10
+    },
+    "description": "Smartest frontier model with configurable reasoning",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-5"
+  },
+  {
+    "id": "gpt-5-mini-2025-08-07",
+    "shortName": "gpt-5-mini",
+    "name": "GPT-5 Mini",
+    "provider": "openai",
+    "releaseDate": "2025-08-07",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "reasoning"
+    ],
+    "tags": [
+      "balanced",
+      "fast",
+      "reasoning"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384
+    },
+    "pricing": {
+      "input": 0.25,
+      "output": 2
+    },
+    "description": "Balanced performance and cost",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-5-mini"
+  },
+  {
+    "id": "gpt-5-nano-2025-08-07",
+    "shortName": "gpt-5-nano",
+    "name": "GPT-5 Nano",
+    "provider": "openai",
+    "releaseDate": "2025-08-07",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384
+    },
+    "pricing": {
+      "input": 0.05,
+      "output": 0.4
+    },
+    "description": "Fastest, most cost-efficient version of GPT-5",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-5-nano"
+  },
+  {
+    "id": "gpt-4o-2024-08-06",
+    "shortName": "gpt-4o",
+    "name": "GPT-4o",
+    "provider": "openai",
+    "releaseDate": "2024-08-06",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "multimodal",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384
+    },
+    "pricing": {
+      "input": 2.5,
+      "output": 10
+    },
+    "description": "Most capable GPT-4o, best for complex tasks",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-4o"
+  },
+  {
+    "id": "gpt-4o-mini-2024-07-18",
+    "shortName": "gpt-4o-mini",
+    "name": "GPT-4o Mini",
+    "provider": "openai",
+    "releaseDate": "2024-07-18",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384
+    },
+    "pricing": {
+      "input": 0.15,
+      "output": 0.6
+    },
+    "description": "Fast and affordable, good for most tasks",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-4o-mini"
+  },
+  {
+    "id": "o1-2024-12-17",
+    "shortName": "o1",
+    "name": "O1",
+    "provider": "openai",
+    "releaseDate": "2024-12-17",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "reasoning",
+      "code-generation"
+    ],
+    "tags": [
+      "reasoning",
+      "flagship",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 100000
+    },
+    "pricing": {
+      "input": 15,
+      "output": 60
+    },
+    "description": "Most advanced reasoning model for complex problem-solving",
+    "docsUrl": "https://platform.openai.com/docs/models/o1"
+  },
+  {
+    "id": "o1-mini-2024-09-12",
+    "shortName": "o1-mini",
+    "name": "O1 Mini",
+    "provider": "openai",
+    "releaseDate": "2024-09-12",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "reasoning",
+      "code-generation"
+    ],
+    "tags": [
+      "reasoning",
+      "cost-effective",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 65536
+    },
+    "pricing": {
+      "input": 3,
+      "output": 12
+    },
+    "description": "Faster and cheaper reasoning model",
+    "docsUrl": "https://platform.openai.com/docs/models/o1-mini"
+  },
+  {
+    "id": "gpt-4-turbo-2024-04-09",
+    "name": "GPT-4 Turbo",
+    "provider": "openai",
+    "releaseDate": "2024-04-09",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 10,
+      "output": 30
+    },
+    "description": "Previous generation GPT-4 Turbo, replaced by GPT-4o",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4",
+    "deprecationDate": "2024-08-06",
+    "replacementModel": "gpt-4o-2024-08-06"
+  },
+  {
+    "id": "gpt-4-0613",
+    "name": "GPT-4",
+    "provider": "openai",
+    "releaseDate": "2023-06-13",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8192,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 30,
+      "output": 60
+    },
+    "description": "Original GPT-4 model, replaced by newer versions",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4",
+    "deprecationDate": "2024-06-13",
+    "replacementModel": "gpt-4o-2024-08-06"
+  },
+  {
+    "id": "gpt-3.5-turbo-0125",
+    "name": "GPT-3.5 Turbo",
+    "provider": "openai",
+    "releaseDate": "2024-01-25",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 16385,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 1.5
+    },
+    "description": "Latest GPT-3.5 model, superseded by GPT-4o mini",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-3-5-turbo",
+    "deprecationDate": "2024-09-13",
+    "shutdownDate": "2025-09-13",
+    "replacementModel": "gpt-4o-mini-2024-07-18"
+  },
+  {
+    "id": "gpt-3.5-turbo-instruct",
+    "name": "GPT-3.5 Turbo Instruct",
+    "provider": "openai",
+    "releaseDate": "2023-09-01",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 4096,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 1.5,
+      "output": 2
+    },
+    "description": "Instruction-following model, replaced by chat models",
+    "docsUrl": "https://platform.openai.com/docs/models/gpt-3-5-turbo",
+    "deprecationDate": "2024-01-04",
+    "replacementModel": "gpt-4o-mini-2024-07-18"
+  },
+  {
+    "id": "text-davinci-003",
+    "name": "Davinci 003",
+    "provider": "openai",
+    "releaseDate": "2022-11-28",
+    "status": "disabled",
+    "capabilities": [
+      "text-generation"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 4097,
+      "maxOutputTokens": 4097
+    },
+    "pricing": {
+      "input": 20,
+      "output": 20
+    },
+    "description": "Legacy GPT-3 model, shut down January 2024",
+    "docsUrl": "https://platform.openai.com/docs/deprecations",
+    "deprecationDate": "2023-07-06",
+    "shutdownDate": "2024-01-04",
+    "replacementModel": "gpt-3.5-turbo-instruct"
+  },
+  {
+    "id": "text-embedding-3-large",
+    "name": "Text Embedding 3 Large",
+    "provider": "openai",
+    "releaseDate": "2024-01-25",
+    "status": "stable",
+    "capabilities": [
+      "embeddings"
+    ],
+    "tags": [
+      "flagship"
+    ],
+    "limits": {
+      "contextWindow": 8191,
+      "maxOutputTokens": 0
+    },
+    "pricing": {
+      "input": 0.13,
+      "output": 0
+    },
+    "description": "Most capable embedding model, 3072 dimensions, improved performance",
+    "docsUrl": "https://platform.openai.com/docs/models/embeddings"
+  },
+  {
+    "id": "text-embedding-3-small",
+    "name": "Text Embedding 3 Small",
+    "provider": "openai",
+    "releaseDate": "2024-01-25",
+    "status": "stable",
+    "capabilities": [
+      "embeddings"
+    ],
+    "tags": [
+      "cost-effective",
+      "fast"
+    ],
+    "limits": {
+      "contextWindow": 8191,
+      "maxOutputTokens": 0
+    },
+    "pricing": {
+      "input": 0.02,
+      "output": 0
+    },
+    "description": "Efficient embedding model, 1536 dimensions, 5x cheaper than ada-002",
+    "docsUrl": "https://platform.openai.com/docs/models/embeddings"
+  },
+  {
+    "id": "text-embedding-ada-002",
+    "name": "Text Embedding Ada 002",
+    "provider": "openai",
+    "releaseDate": "2022-12-15",
+    "status": "stable",
+    "capabilities": [
+      "embeddings"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8191,
+      "maxOutputTokens": 0
+    },
+    "pricing": {
+      "input": 0.1,
+      "output": 0
+    },
+    "description": "Legacy embedding model, 1536 dimensions, replaced by v3 models",
+    "docsUrl": "https://platform.openai.com/docs/models/embeddings",
+    "deprecationDate": "2024-01-25",
+    "replacementModel": "text-embedding-3-small"
+  },
+  {
+    "id": "claude-haiku-4-5",
+    "aliases": [
+      "claude-haiku-4-5-20251001",
+      "claude-haiku-4.5"
+    ],
+    "name": "Claude Haiku 4.5",
+    "provider": "anthropic",
+    "releaseDate": "2025-10-01",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "mcp-servers"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 1,
+      "output": 5,
+      "cachedInput": 0.1
+    },
+    "description": "2x faster than Sonnet, ultra-cheap with prompt caching, supports MCP",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
+  },
+  {
+    "id": "claude-sonnet-4-5",
+    "aliases": [
+      "claude-sonnet-4-5-20250929",
+      "claude-sonnet-4.5"
+    ],
+    "name": "Claude Sonnet 4.5",
+    "provider": "anthropic",
+    "releaseDate": "2025-09-29",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "code-generation",
+      "mcp-servers"
+    ],
+    "tags": [
+      "balanced",
+      "coding",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 3,
+      "output": 15,
+      "cachedInput": 0.3
+    },
+    "description": "Latest Claude, balanced performance with excellent coding and MCP support",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
+  },
+  {
+    "id": "claude-opus-4",
+    "aliases": [
+      "claude-opus-4-1",
+      "claude-opus"
+    ],
+    "name": "Claude Opus 4.1",
+    "provider": "anthropic",
+    "releaseDate": "2025-05-15",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "reasoning",
+      "code-generation",
+      "mcp-servers"
+    ],
+    "tags": [
+      "flagship",
+      "reasoning",
+      "multimodal",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 15,
+      "output": 75,
+      "cachedInput": 1.5
+    },
+    "description": "Most powerful Claude for complex reasoning, analysis, and MCP servers",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
+  },
+  {
+    "id": "claude-3-5-sonnet-20241022",
+    "shortName": "claude-3-5-sonnet",
+    "name": "Claude 3.5 Sonnet",
+    "provider": "anthropic",
+    "releaseDate": "2024-10-22",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "code-generation"
+    ],
+    "tags": [
+      "balanced",
+      "coding",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 3,
+      "output": 15,
+      "cachedInput": 0.3
+    },
+    "description": "Previous generation Claude 3.5, still excellent for most tasks",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
+  },
+  {
+    "id": "claude-3-5-haiku-20241022",
+    "shortName": "claude-3-5-haiku",
+    "name": "Claude 3.5 Haiku",
+    "provider": "anthropic",
+    "releaseDate": "2024-10-22",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.8,
+      "output": 4,
+      "cachedInput": 0.08
+    },
+    "description": "Fast and affordable Claude 3.5 variant",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview"
+  },
+  {
+    "id": "claude-3-opus-20240229",
+    "shortName": "claude-3-opus",
+    "name": "Claude 3 Opus",
+    "provider": "anthropic",
+    "releaseDate": "2024-02-29",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 15,
+      "output": 75,
+      "cachedInput": 1.5
+    },
+    "description": "Original Claude 3 Opus, replaced by Claude Opus 4.1",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview",
+    "deprecationDate": "2025-05-15",
+    "replacementModel": "claude-opus-4"
+  },
+  {
+    "id": "claude-3-sonnet-20240229",
+    "shortName": "claude-3-sonnet",
+    "name": "Claude 3 Sonnet",
+    "provider": "anthropic",
+    "releaseDate": "2024-02-29",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 3,
+      "output": 15,
+      "cachedInput": 0.3
+    },
+    "description": "Original Claude 3 Sonnet, superseded by Claude 3.5 Sonnet",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview",
+    "deprecationDate": "2024-06-20",
+    "replacementModel": "claude-3-5-sonnet-20241022"
+  },
+  {
+    "id": "claude-3-haiku-20240307",
+    "shortName": "claude-3-haiku",
+    "name": "Claude 3 Haiku",
+    "provider": "anthropic",
+    "releaseDate": "2024-03-07",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated",
+      "fast"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 0.25,
+      "output": 1.25,
+      "cachedInput": 0.03
+    },
+    "description": "Original Claude 3 Haiku, replaced by Claude 3.5 Haiku",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview",
+    "deprecationDate": "2024-10-22",
+    "replacementModel": "claude-3-5-haiku-20241022"
+  },
+  {
+    "id": "claude-2.1",
+    "name": "Claude 2.1",
+    "provider": "anthropic",
+    "releaseDate": "2023-11-21",
+    "status": "disabled",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 200000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 8,
+      "output": 24
+    },
+    "description": "Legacy Claude 2.1, disabled in favor of Claude 3+",
+    "docsUrl": "https://docs.anthropic.com/en/docs/models-overview",
+    "deprecationDate": "2024-02-29",
+    "shutdownDate": "2024-07-01",
+    "replacementModel": "claude-3-sonnet-20240229"
+  },
+  {
+    "id": "gemini-2.5-flash",
+    "name": "Gemini 2.5 Flash",
+    "provider": "google",
+    "releaseDate": "2025-02-15",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "audio-input",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "code-generation"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective",
+      "multimodal",
+      "long-context"
+    ],
+    "limits": {
+      "contextWindow": 1000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.35,
+      "output": 1.05
+    },
+    "description": "Latest stable, fast and affordable with 1M token context",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-2.5-pro",
+    "name": "Gemini 2.5 Pro",
+    "provider": "google",
+    "releaseDate": "2025-03-01",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "audio-input",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "code-generation",
+      "reasoning"
+    ],
+    "tags": [
+      "flagship",
+      "long-context",
+      "multimodal",
+      "reasoning"
+    ],
+    "limits": {
+      "contextWindow": 2000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 1.25,
+      "output": 5
+    },
+    "description": "Most capable Gemini with massive 2M token context window",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-2.0-flash-exp",
+    "name": "Gemini 2.0 Flash Exp",
+    "provider": "google",
+    "releaseDate": "2024-12-11",
+    "status": "experimental",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "audio-input",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "experimental",
+      "fast",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 1000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0,
+      "output": 0
+    },
+    "description": "Experimental version, free preview",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/experimental-models"
+  },
+  {
+    "id": "gemini-flash-latest",
+    "name": "Gemini Flash (Latest)",
+    "provider": "google",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "audio-input",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "code-generation"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective",
+      "multimodal",
+      "long-context"
+    ],
+    "limits": {
+      "contextWindow": 1000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.35,
+      "output": 1.05
+    },
+    "description": "Auto-updated to latest stable Flash version (currently 2.5)",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-pro-latest",
+    "name": "Gemini Pro (Latest)",
+    "provider": "google",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "audio-input",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "code-generation",
+      "reasoning"
+    ],
+    "tags": [
+      "flagship",
+      "long-context",
+      "multimodal",
+      "reasoning"
+    ],
+    "limits": {
+      "contextWindow": 2000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 1.25,
+      "output": 5
+    },
+    "description": "Auto-updated to latest stable Pro version (currently 2.5)",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-1.5-flash",
+    "name": "Gemini 1.5 Flash",
+    "provider": "google",
+    "releaseDate": "2024-05-14",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective",
+      "multimodal",
+      "long-context"
+    ],
+    "limits": {
+      "contextWindow": 1000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.35,
+      "output": 1.05
+    },
+    "description": "Previous generation Flash, still excellent",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-1.5-pro",
+    "name": "Gemini 1.5 Pro",
+    "provider": "google",
+    "releaseDate": "2024-05-14",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "function-calling",
+      "streaming",
+      "json-mode",
+      "reasoning"
+    ],
+    "tags": [
+      "long-context",
+      "multimodal",
+      "reasoning"
+    ],
+    "limits": {
+      "contextWindow": 2000000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 1.25,
+      "output": 5
+    },
+    "description": "Previous generation Pro with 2M context",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini"
+  },
+  {
+    "id": "gemini-1.0-pro",
+    "name": "Gemini 1.0 Pro",
+    "provider": "google",
+    "releaseDate": "2023-12-06",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 32760,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 1.5
+    },
+    "description": "Original Gemini Pro, replaced by Gemini 1.5 Pro",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini",
+    "deprecationDate": "2024-05-14",
+    "replacementModel": "gemini-1.5-pro"
+  },
+  {
+    "id": "gemini-1.0-pro-vision",
+    "name": "Gemini 1.0 Pro Vision",
+    "provider": "google",
+    "releaseDate": "2023-12-13",
+    "status": "deprecated",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "streaming"
+    ],
+    "tags": [
+      "deprecated",
+      "multimodal"
+    ],
+    "limits": {
+      "contextWindow": 16384,
+      "maxOutputTokens": 2048
+    },
+    "pricing": {
+      "input": 0.25,
+      "output": 0.5
+    },
+    "description": "Original Gemini Pro with vision, replaced by Gemini 1.5 Pro",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs/models/gemini",
+    "deprecationDate": "2024-05-14",
+    "shutdownDate": "2024-10-15",
+    "replacementModel": "gemini-1.5-flash"
+  },
+  {
+    "id": "text-bison-001",
+    "name": "PaLM 2 Text Bison",
+    "provider": "google",
+    "releaseDate": "2023-05-10",
+    "status": "disabled",
+    "capabilities": [
+      "text-generation"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8196,
+      "maxOutputTokens": 1024
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 0.5
+    },
+    "description": "Legacy PaLM 2 model, shut down in favor of Gemini",
+    "docsUrl": "https://ai.google.dev/palm_docs/deprecation",
+    "deprecationDate": "2023-12-06",
+    "shutdownDate": "2024-10-09",
+    "replacementModel": "gemini-1.5-flash"
+  },
+  {
+    "id": "chat-bison-001",
+    "name": "PaLM 2 Chat Bison",
+    "provider": "google",
+    "releaseDate": "2023-05-10",
+    "status": "disabled",
+    "capabilities": [
+      "chat",
+      "text-generation"
+    ],
+    "tags": [
+      "deprecated"
+    ],
+    "limits": {
+      "contextWindow": 8196,
+      "maxOutputTokens": 1024
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 0.5
+    },
+    "description": "Legacy PaLM 2 chat model, shut down in favor of Gemini",
+    "docsUrl": "https://ai.google.dev/palm_docs/deprecation",
+    "deprecationDate": "2023-12-06",
+    "shutdownDate": "2024-10-09",
+    "replacementModel": "gemini-1.5-flash"
+  },
+  {
+    "id": "grok-beta",
+    "aliases": [
+      "grok"
+    ],
+    "name": "Grok Beta",
+    "provider": "xai",
+    "releaseDate": "2024-11-04",
+    "status": "beta",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "flagship",
+      "experimental"
+    ],
+    "limits": {
+      "contextWindow": 131072,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 5,
+      "output": 15
+    },
+    "description": "xAI flagship model with real-time X (Twitter) data access",
+    "docsUrl": "https://docs.x.ai/docs"
+  },
+  {
+    "id": "grok-vision-beta",
+    "aliases": [
+      "grok-vision"
+    ],
+    "name": "Grok Vision Beta",
+    "provider": "xai",
+    "releaseDate": "2024-11-20",
+    "status": "beta",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "code-generation",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "flagship",
+      "multimodal",
+      "experimental"
+    ],
+    "limits": {
+      "contextWindow": 131072,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 5,
+      "output": 15
+    },
+    "description": "Grok with vision capabilities for image understanding",
+    "docsUrl": "https://docs.x.ai/docs"
+  },
+  {
+    "id": "mistral-large-2411",
+    "aliases": [
+      "mistral-large"
+    ],
+    "name": "Mistral Large",
+    "provider": "mistral",
+    "releaseDate": "2024-11-13",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "flagship",
+      "coding",
+      "balanced"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 2,
+      "output": 6
+    },
+    "description": "Most capable Mistral model for complex tasks",
+    "docsUrl": "https://docs.mistral.ai/platform/endpoints"
+  },
+  {
+    "id": "mistral-small-2409",
+    "aliases": [
+      "mistral-small"
+    ],
+    "name": "Mistral Small",
+    "provider": "mistral",
+    "releaseDate": "2024-09-18",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "balanced",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 32000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.2,
+      "output": 0.6
+    },
+    "description": "Efficient model for everyday tasks",
+    "docsUrl": "https://docs.mistral.ai/platform/endpoints"
+  },
+  {
+    "id": "mixtral-8x22b",
+    "aliases": [
+      "mixtral-large"
+    ],
+    "name": "Mixtral 8x22B",
+    "provider": "mistral",
+    "releaseDate": "2024-04-17",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "flagship",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 65536,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 2,
+      "output": 6
+    },
+    "description": "Sparse mixture of experts model with excellent performance",
+    "docsUrl": "https://docs.mistral.ai/platform/endpoints"
+  },
+  {
+    "id": "mixtral-8x7b",
+    "aliases": [
+      "mixtral"
+    ],
+    "name": "Mixtral 8x7B",
+    "provider": "mistral",
+    "releaseDate": "2023-12-11",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "balanced",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 32768,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.7,
+      "output": 0.7
+    },
+    "description": "Popular mixture of experts model, great cost-performance ratio",
+    "docsUrl": "https://docs.mistral.ai/platform/endpoints"
+  },
+  {
+    "id": "codestral-2405",
+    "aliases": [
+      "codestral"
+    ],
+    "name": "Codestral",
+    "provider": "mistral",
+    "releaseDate": "2024-05-29",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "streaming"
+    ],
+    "tags": [
+      "coding",
+      "fast"
+    ],
+    "limits": {
+      "contextWindow": 32000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.2,
+      "output": 0.6
+    },
+    "description": "Specialized code generation model trained on 80+ languages",
+    "docsUrl": "https://docs.mistral.ai/platform/endpoints"
+  },
+  {
+    "id": "llama-3.3-70b",
+    "aliases": [
+      "llama-3.3"
+    ],
+    "name": "Llama 3.3 70B",
+    "provider": "meta",
+    "releaseDate": "2024-12-06",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "flagship",
+      "coding",
+      "balanced"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.6,
+      "output": 0.6
+    },
+    "description": "Latest Llama model with improved performance and longer context",
+    "docsUrl": "https://llama.meta.com/docs"
+  },
+  {
+    "id": "llama-3.1-405b",
+    "aliases": [
+      "llama-3.1-405b-instruct"
+    ],
+    "name": "Llama 3.1 405B",
+    "provider": "meta",
+    "releaseDate": "2024-07-23",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "reasoning"
+    ],
+    "tags": [
+      "flagship",
+      "reasoning",
+      "long-context"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 2.7,
+      "output": 2.7
+    },
+    "description": "Largest Llama model with exceptional reasoning capabilities",
+    "docsUrl": "https://llama.meta.com/docs"
+  },
+  {
+    "id": "llama-3.1-70b",
+    "aliases": [
+      "llama-3.1-70b-instruct"
+    ],
+    "name": "Llama 3.1 70B",
+    "provider": "meta",
+    "releaseDate": "2024-07-23",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "balanced",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.6,
+      "output": 0.6
+    },
+    "description": "Balanced model with strong coding and reasoning",
+    "docsUrl": "https://llama.meta.com/docs"
+  },
+  {
+    "id": "llama-3.1-8b",
+    "aliases": [
+      "llama-3.1-8b-instruct"
+    ],
+    "name": "Llama 3.1 8B",
+    "provider": "meta",
+    "releaseDate": "2024-07-23",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "streaming"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.2,
+      "output": 0.2
+    },
+    "description": "Fast and efficient small model for everyday tasks",
+    "docsUrl": "https://llama.meta.com/docs"
+  },
+  {
+    "id": "llama-3.2-90b-vision",
+    "aliases": [
+      "llama-3.2-vision"
+    ],
+    "name": "Llama 3.2 90B Vision",
+    "provider": "meta",
+    "releaseDate": "2024-09-25",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "code-generation",
+      "streaming"
+    ],
+    "tags": [
+      "multimodal",
+      "balanced"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.9,
+      "output": 0.9
+    },
+    "description": "Llama with vision capabilities for image understanding",
+    "docsUrl": "https://llama.meta.com/docs"
+  },
+  {
+    "id": "llama-3.2-11b-vision",
+    "name": "Llama 3.2 11B Vision",
+    "provider": "meta",
+    "releaseDate": "2024-09-25",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "vision",
+      "streaming"
+    ],
+    "tags": [
+      "multimodal",
+      "fast",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.15,
+      "output": 0.15
+    },
+    "description": "Compact vision model for efficient multimodal tasks",
+    "docsUrl": "https://llama.meta.com/docs"
+  },
+  {
+    "id": "deepseek-chat",
+    "aliases": [
+      "deepseek-v3"
+    ],
+    "name": "DeepSeek Chat",
+    "provider": "deepseek",
+    "releaseDate": "2024-12-26",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "flagship",
+      "coding",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 64000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.14,
+      "output": 0.28
+    },
+    "description": "Latest DeepSeek model with excellent coding and reasoning",
+    "docsUrl": "https://platform.deepseek.com/api-docs"
+  },
+  {
+    "id": "deepseek-coder",
+    "name": "DeepSeek Coder",
+    "provider": "deepseek",
+    "releaseDate": "2024-01-25",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "streaming"
+    ],
+    "tags": [
+      "coding",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 32000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 0.14,
+      "output": 0.28
+    },
+    "description": "Specialized model optimized for code generation and completion",
+    "docsUrl": "https://platform.deepseek.com/api-docs"
+  },
+  {
+    "id": "deepseek-reasoner",
+    "aliases": [
+      "deepseek-r1"
+    ],
+    "name": "DeepSeek Reasoner",
+    "provider": "deepseek",
+    "releaseDate": "2025-01-20",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "reasoning",
+      "code-generation",
+      "streaming"
+    ],
+    "tags": [
+      "reasoning",
+      "flagship",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 64000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.55,
+      "output": 2.19
+    },
+    "description": "Advanced reasoning model competitive with top-tier models at fraction of cost",
+    "docsUrl": "https://platform.deepseek.com/api-docs"
+  },
+  {
+    "id": "z-chat-pro",
+    "name": "Z-Chat Pro",
+    "provider": "zai",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "balanced",
+      "coding"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.5,
+      "output": 1.5
+    },
+    "description": "Flagship model with strong performance across tasks",
+    "docsUrl": "https://z.ai/model-api"
+  },
+  {
+    "id": "z-chat-lite",
+    "name": "Z-Chat Lite",
+    "provider": "zai",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "streaming",
+      "json-mode"
+    ],
+    "tags": [
+      "fast",
+      "cost-effective"
+    ],
+    "limits": {
+      "contextWindow": 64000,
+      "maxOutputTokens": 4096
+    },
+    "pricing": {
+      "input": 0.1,
+      "output": 0.3
+    },
+    "description": "Fast and affordable model for general tasks",
+    "docsUrl": "https://z.ai/model-api"
+  },
+  {
+    "id": "z-code",
+    "name": "Z-Code",
+    "provider": "zai",
+    "status": "stable",
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "code-generation",
+      "function-calling",
+      "streaming"
+    ],
+    "tags": [
+      "coding",
+      "balanced"
+    ],
+    "limits": {
+      "contextWindow": 128000,
+      "maxOutputTokens": 8192
+    },
+    "pricing": {
+      "input": 0.6,
+      "output": 1.8
+    },
+    "description": "Specialized model optimized for code generation",
+    "docsUrl": "https://z.ai/model-api"
+  }
+]

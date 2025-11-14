@@ -1,0 +1,48 @@
+{
+  "name": "@gorets/ai-providers",
+  "version": "1.0.0",
+  "description": "Comprehensive database of AI model providers, models, pricing, and capabilities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "generate": "npm run build && node scripts/build-json.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run generate",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "openai",
+    "anthropic",
+    "google",
+    "gemini",
+    "claude",
+    "gpt",
+    "pricing",
+    "models",
+    "providers",
+    "machine-learning",
+    "artificial-intelligence"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorets/ai-providers.git"
+  },
+  "author": "Gorets",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
