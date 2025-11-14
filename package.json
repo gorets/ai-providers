@@ -14,7 +14,7 @@
     "build": "tsc",
     "generate": "npm run build && node scripts/build-json.js",
     "prepare": "npm run build",
-    "prepublishOnly": "npm version patch && npm run generate",
+    "prepublishOnly": "npm run generate",
     "test": "echo \"No tests yet\" && exit 0"
   },
   "keywords": [
