@@ -1,0 +1,72 @@
+name: Semantic Release (Alternative)
+
+# This workflow is DISABLED by default
+# To enable: rename to remove .disabled or uncomment 'on:' section
+
+# Automatically determines version and publishes based on commit messages
+# Requires conventional commits (feat:, fix:, BREAKING CHANGE:)
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install -g semantic-release @semantic-release/changelog @semantic-release/git
+
+      - name: Build and generate data
+        run: npm run generate
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+
+# Configuration would go in .releaserc.json:
+# {
+#   "branches": ["main"],
+#   "plugins": [
+#     "@semantic-release/commit-analyzer",
+#     "@semantic-release/release-notes-generator",
+#     "@semantic-release/changelog",
+#     "@semantic-release/npm",
+#     "@semantic-release/github",
+#     ["@semantic-release/git", {
+#       "assets": ["package.json", "CHANGELOG.md", "data/**"],
+#       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+#     }]
+#   ]
+# }
+#
+# Commit message format:
+# - feat: new feature → minor version bump (1.0.0 → 1.1.0)
+# - fix: bug fix → patch version bump (1.0.0 → 1.0.1)
+# - BREAKING CHANGE: → major version bump (1.0.0 → 2.0.0)
+# - docs: documentation → no release
+# - chore: maintenance → no release

@@ -1,0 +1,50 @@
+name: Version Check
+
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get package version
+        id: package_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Package version: $VERSION"
+
+      - name: Check version format
+        run: |
+          VERSION="${{ steps.package_version.outputs.version }}"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
+            echo "❌ Invalid version format: $VERSION"
+            echo "Version must follow semver format (e.g., 1.0.0, 1.0.0-beta.1)"
+            exit 1
+          fi
+          echo "✅ Version format is valid"
+
+      - name: Check if version was bumped
+        run: |
+          git fetch origin main
+          CURRENT_VERSION="${{ steps.package_version.outputs.version }}"
+          MAIN_VERSION=$(git show origin/main:package.json | node -p "JSON.parse(require('fs').readFileSync('/dev/stdin', 'utf8')).version")
+
+          echo "Current version: $CURRENT_VERSION"
+          echo "Main version: $MAIN_VERSION"
+
+          if [ "$CURRENT_VERSION" = "$MAIN_VERSION" ]; then
+            echo "⚠️ Version has not been bumped in package.json"
+            echo "If you're adding new features, please update the version."
+            # Don't fail - just warn
+          else
+            echo "✅ Version has been updated"
+          fi
