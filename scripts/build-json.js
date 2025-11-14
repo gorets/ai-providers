@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 // Check if dist directory exists from TypeScript compilation
 const distDir = path.join(__dirname, '..', 'dist');
-const dataDir = path.join(distDir, 'data');
+const dataDir = path.join(__dirname, '..', 'data');
 
 // Create data directory if it doesn't exist
 if (!fs.existsSync(dataDir)) {

@@ -1,9 +1,25 @@
-.history
-.cursor
+# Dependencies
 node_modules/
-*.log
-.DS_Store
-coverage/
+
+# Build output
+dist/
+
+# IDE
 .vscode/
 .idea/
-*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

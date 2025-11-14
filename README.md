@@ -55,6 +55,70 @@ or
 yarn add @gorets/ai-providers
 ```
 
+## 📡 Direct JSON Access (Without NPM)
+
+You can access the JSON data files directly from GitHub without installing the package:
+
+### Available JSON Files
+
+All data is available at `https://raw.githubusercontent.com/gorets/ai-providers/main/data/`:
+
+- **[database.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/database.json)** - Complete database (providers + models + metadata)
+- **[providers.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/providers.json)** - All providers only
+- **[models.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models.json)** - All models only
+- **[metadata.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/metadata.json)** - Version and update info
+
+### Models by Provider
+
+- **[models-openai.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-openai.json)** - OpenAI models (GPT-5.1, GPT-5, GPT-4o, O1, embeddings)
+- **[models-anthropic.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-anthropic.json)** - Anthropic models (Claude 4.5, Claude 3.x)
+- **[models-google.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-google.json)** - Google models (Gemini 2.5, Gemini 1.5)
+- **[models-xai.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-xai.json)** - xAI models (Grok)
+- **[models-mistral.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-mistral.json)** - Mistral models (Mistral, Mixtral, Codestral)
+- **[models-meta.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-meta.json)** - Meta models (Llama 3.x)
+- **[models-deepseek.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-deepseek.json)** - DeepSeek models
+- **[models-zai.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-zai.json)** - Z.AI models
+
+### Example: Fetch JSON in Browser/Node.js
+
+```javascript
+// Fetch all models
+const response = await fetch('https://raw.githubusercontent.com/gorets/ai-providers/main/data/models.json');
+const models = await response.json();
+
+// Fetch OpenAI models only
+const openaiResponse = await fetch('https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-openai.json');
+const openaiModels = await openaiResponse.json();
+
+// Find GPT-5.1
+const gpt51 = openaiModels.find(m => m.id === 'gpt-5.1-instant' || m.shortName === 'gpt-5.1');
+console.log(`${gpt51.name}: $${gpt51.pricing.input}/1M input tokens`);
+```
+
+### Example: Python
+
+```python
+import requests
+
+# Fetch all models
+response = requests.get('https://raw.githubusercontent.com/gorets/ai-providers/main/data/models.json')
+models = response.json()
+
+# Find models with vision capability
+vision_models = [m for m in models if 'vision' in m['capabilities']]
+print(f"Found {len(vision_models)} models with vision support")
+```
+
+### Example: curl
+
+```bash
+# Download all models
+curl -O https://raw.githubusercontent.com/gorets/ai-providers/main/data/models.json
+
+# Download specific provider models
+curl -O https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-openai.json
+```
+
 ## 🚀 Usage
 
 ### TypeScript/JavaScript
