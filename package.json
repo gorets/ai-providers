@@ -1,6 +1,6 @@
 {
   "name": "@gorets/ai-providers",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "Comprehensive database of AI model providers, models, pricing, and capabilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
     "build": "tsc",
     "generate": "npm run build && node scripts/build-json.js",
     "prepare": "npm run build",
-    "prepublishOnly": "npm version patch && npm run generate",
+    "prepublishOnly": "npm run generate",
     "test": "echo \"No tests yet\" && exit 0"
   },
   "keywords": [

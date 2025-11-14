@@ -12,7 +12,7 @@ import { PROVIDERS } from './providers';
 import { ALL_MODELS } from './models/index';
 import type { AIProvidersDatabase } from './types';
 
-// @ts-ignore - package.json is not in TypeScript path but exists at runtime!!!
+// @ts-ignore - package.json is not in TypeScript path but exists at runtime!
 import packageJson from '../package.json';
 
 /**
