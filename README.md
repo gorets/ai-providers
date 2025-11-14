@@ -434,6 +434,85 @@ export const YOUR_PROVIDER_MODELS: ModelInfo[] = [
 ];
 ```
 
+## 🛠️ Development & Contributing
+
+### Local Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/gorets/ai-providers.git
+cd ai-providers
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Make changes to source files in `src/`
+
+4. Generate JSON files:
+```bash
+npm run generate
+```
+
+This will:
+- Compile TypeScript (`npm run build`)
+- Generate JSON files in `data/` directory
+
+### Automated Data Generation
+
+**JSON files in `data/` are auto-generated** from TypeScript sources:
+
+- ✅ **On merge to `main`**: GitHub Actions automatically regenerates `data/` files
+- ✅ **In Pull Requests**: Workflow verifies data files are in sync with source code
+
+**You don't need to manually regenerate data/**, but if you want to preview changes locally:
+```bash
+npm run generate
+```
+
+### Adding New Models
+
+1. Edit the appropriate file in `src/models/` (e.g., `openai.ts`, `anthropic.ts`)
+2. Add your model following the `ModelInfo` interface
+3. Run `npm run generate` to update JSON files
+4. Commit both source changes and generated JSON files
+5. Create a pull request
+
+### Adding New Providers
+
+1. Create a new file in `src/models/` (e.g., `newprovider.ts`)
+2. Export a constant array of models
+3. Add provider info to `src/providers.ts`
+4. Import and include in `src/models/index.ts`
+5. Update type in `src/types.ts` (`LLMProvider` union)
+6. Run `npm run generate`
+7. Update README with new provider info
+
+### Project Structure
+
+```
+ai-providers/
+├── src/                    # TypeScript source files
+│   ├── models/            # Model definitions by provider
+│   │   ├── openai.ts
+│   │   ├── anthropic.ts
+│   │   └── ...
+│   ├── providers.ts       # Provider metadata
+│   ├── types.ts          # TypeScript type definitions
+│   ├── utils.ts          # Utility functions
+│   └── index.ts          # Main entry point
+├── data/                  # Auto-generated JSON files (committed to git)
+│   ├── database.json
+│   ├── models.json
+│   └── ...
+├── dist/                  # Compiled TypeScript (gitignored)
+├── scripts/
+│   └── build-json.js     # JSON generation script
+└── .github/workflows/    # GitHub Actions for automation
+```
+
 ## 📝 License
 
 MIT License - see [LICENSE](LICENSE) file for details

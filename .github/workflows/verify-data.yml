@@ -1,0 +1,48 @@
+name: Verify JSON Data
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'scripts/build-json.js'
+      - 'package.json'
+      - 'tsconfig.json'
+      - 'data/**'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Generate JSON files
+        run: npm run generate
+
+      - name: Verify data files are up to date
+        run: |
+          if ! git diff --quiet data/; then
+            echo "❌ JSON data files are out of sync with source code"
+            echo "Please run 'npm run generate' and commit the changes"
+            echo ""
+            echo "Changed files:"
+            git diff --name-only data/
+            echo ""
+            echo "Differences:"
+            git diff data/
+            exit 1
+          fi
+          echo "✅ JSON data files are up to date"
