@@ -12,10 +12,13 @@ import { PROVIDERS } from './providers';
 import { ALL_MODELS } from './models/index';
 import type { AIProvidersDatabase } from './types';
 
+// @ts-ignore - package.json is not in TypeScript path but exists at runtime
+import packageJson from '../package.json';
+
 /**
- * Package version
+ * Package version (read from package.json)
  */
-export const VERSION = '1.0.0';
+export const VERSION = packageJson.version;
 
 /**
  * Get the complete database with all providers and models
