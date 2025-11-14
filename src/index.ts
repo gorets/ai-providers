@@ -15,7 +15,7 @@ import type { AIProvidersDatabase } from './types';
 /**
  * Package version
  */
-export const VERSION = '1.0.0';
+export const VERSION = '1.0.1';
 
 /**
  * Get the complete database with all providers and models
@@ -25,7 +25,7 @@ export function getDatabase(): AIProvidersDatabase {
     metadata: {
       version: VERSION,
       lastUpdated: new Date().toISOString().split('T')[0],
-      generatedAt: new Date().toISOString(),
+      generatedAt: new Date().toISOString().split('T')[0], // Use date only for reproducibility
     },
     providers: PROVIDERS,
     models: ALL_MODELS,
