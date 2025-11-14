@@ -513,6 +513,38 @@ ai-providers/
 └── .github/workflows/    # GitHub Actions for automation
 ```
 
+## 🚀 Releases & Publishing
+
+### Stable Releases
+
+This package uses **manual versioning** with automated publishing:
+
+1. **Update version** in `package.json` (manually or with `npm version`)
+2. **Create GitHub Release** with tag (e.g., `v1.1.0`)
+3. **GitHub Actions automatically publishes** to npm
+
+See [RELEASE.md](RELEASE.md) for detailed release process.
+
+### NPM Package
+
+- **Stable releases**: Published on [npm](https://www.npmjs.com/package/@gorets/ai-providers)
+- **Installation**: `npm install @gorets/ai-providers`
+- **Versioning**: Follows [Semantic Versioning](https://semver.org/)
+- **Provenance**: All packages published with supply chain security
+
+### Development Versions (Optional)
+
+You can enable automatic `@next` releases for every merge to main:
+```bash
+# Rename workflow to enable
+mv .github/workflows/publish-next.yml.disabled .github/workflows/publish-next.yml
+
+# Users can then install latest dev version
+npm install @gorets/ai-providers@next
+```
+
+See [.github/workflows/](https://github.com/gorets/ai-providers/tree/main/.github/workflows) for alternative versioning strategies.
+
 ## 📝 License
 
 MIT License - see [LICENSE](LICENSE) file for details
