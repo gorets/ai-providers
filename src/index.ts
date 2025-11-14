@@ -25,7 +25,7 @@ export function getDatabase(): AIProvidersDatabase {
     metadata: {
       version: VERSION,
       lastUpdated: new Date().toISOString().split('T')[0],
-      generatedAt: new Date().toISOString(),
+      generatedAt: new Date().toISOString().split('T')[0], // Use date only for reproducibility
     },
     providers: PROVIDERS,
     models: ALL_MODELS,
