@@ -79,7 +79,9 @@ export interface ModelLimits {
 export interface ModelInfo {
   /** Unique model identifier (as used in API calls) */
   id: string;
-  /** Alternative IDs/aliases for this model (e.g., short names without dates) */
+  /** Canonical short name commonly used in documentation (e.g., 'gpt-5.1', 'claude-sonnet-4-5') */
+  shortName?: string;
+  /** Alternative IDs/aliases for this model (additional variants) */
   aliases?: string[];
   /** Human-readable model name */
   name: string;

@@ -11,7 +11,8 @@ export const OPENAI_MODELS: ModelInfo[] = [
   // GPT-5.1 Series (Latest - November 2025)
   {
     id: 'gpt-5.1-instant',
-    aliases: ['gpt-5.1', 'gpt-5-1-instant'],
+    shortName: 'gpt-5.1',
+    aliases: ['gpt-5-1-instant'],
     name: 'GPT-5.1 Instant',
     provider: 'openai',
     releaseDate: '2025-11-12',
@@ -39,6 +40,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   },
   {
     id: 'gpt-5.1-thinking',
+    shortName: 'gpt-5.1-thinking',
     aliases: ['gpt-5-1-thinking'],
     name: 'GPT-5.1 Thinking',
     provider: 'openai',
@@ -69,6 +71,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   // GPT-5 Series
   {
     id: 'gpt-5-2025-08-07',
+    shortName: 'gpt-5',
     name: 'GPT-5',
     provider: 'openai',
     releaseDate: '2025-08-07',
@@ -96,6 +99,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   },
   {
     id: 'gpt-5-mini-2025-08-07',
+    shortName: 'gpt-5-mini',
     name: 'GPT-5 Mini',
     provider: 'openai',
     releaseDate: '2025-08-07',
@@ -123,6 +127,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   },
   {
     id: 'gpt-5-nano-2025-08-07',
+    shortName: 'gpt-5-nano',
     name: 'GPT-5 Nano',
     provider: 'openai',
     releaseDate: '2025-08-07',
@@ -151,6 +156,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   // GPT-4o Series
   {
     id: 'gpt-4o-2024-08-06',
+    shortName: 'gpt-4o',
     name: 'GPT-4o',
     provider: 'openai',
     releaseDate: '2024-08-06',
@@ -178,6 +184,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   },
   {
     id: 'gpt-4o-mini-2024-07-18',
+    shortName: 'gpt-4o-mini',
     name: 'GPT-4o Mini',
     provider: 'openai',
     releaseDate: '2024-07-18',
@@ -207,6 +214,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   // O1 Series (Reasoning models)
   {
     id: 'o1-2024-12-17',
+    shortName: 'o1',
     name: 'O1',
     provider: 'openai',
     releaseDate: '2024-12-17',
@@ -226,6 +234,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
   },
   {
     id: 'o1-mini-2024-09-12',
+    shortName: 'o1-mini',
     name: 'O1 Mini',
     provider: 'openai',
     releaseDate: '2024-09-12',

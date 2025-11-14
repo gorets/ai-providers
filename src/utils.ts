@@ -61,11 +61,14 @@ export function calculateCostWithCache(
 }
 
 /**
- * Get model by ID or alias
+ * Get model by ID, short name, or alias
  */
 export function getModelById(id: string): ModelInfo | undefined {
   return ALL_MODELS.find(
-    (model: ModelInfo) => model.id === id || model.aliases?.includes(id)
+    (model: ModelInfo) =>
+      model.id === id ||
+      model.shortName === id ||
+      model.aliases?.includes(id)
   );
 }
 
