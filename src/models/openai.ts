@@ -29,6 +29,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 1.5,
+      cachedInput: 0.75, // 50% discount for cached tokens
       output: 12.0,
     },
     description: 'Most-used model with adaptive reasoning, warmer and more intelligent',
@@ -57,6 +58,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 2.5,
+      cachedInput: 1.25, // 50% discount for cached tokens
       output: 20.0,
     },
     description: 'Advanced reasoning model, easier to understand and faster on simple tasks',
@@ -86,6 +88,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 1.25,
+      cachedInput: 0.625, // 50% discount for cached tokens
       output: 10.0,
     },
     description: 'Smartest frontier model with configurable reasoning',
@@ -113,6 +116,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 0.25,
+      cachedInput: 0.125, // 50% discount for cached tokens
       output: 2.0,
     },
     description: 'Balanced performance and cost',
@@ -139,6 +143,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 0.05,
+      cachedInput: 0.025, // 50% discount for cached tokens
       output: 0.4,
     },
     description: 'Fastest, most cost-efficient version of GPT-5',
@@ -168,6 +173,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 2.5,
+      cachedInput: 1.25, // 50% discount for cached tokens
       output: 10.0,
     },
     description: 'Most capable GPT-4o, best for complex tasks',
@@ -195,6 +201,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 0.15,
+      cachedInput: 0.075, // 50% discount for cached tokens
       output: 0.6,
     },
     description: 'Fast and affordable, good for most tasks',
@@ -216,6 +223,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 15.0,
+      cachedInput: 7.5, // 50% discount for cached tokens
       output: 60.0,
     },
     description: 'Most advanced reasoning model for complex problem-solving',
@@ -235,6 +243,7 @@ export const OPENAI_MODELS: ModelInfo[] = [
     },
     pricing: {
       input: 3.0,
+      cachedInput: 1.5, // 50% discount for cached tokens
       output: 12.0,
     },
     description: 'Faster and cheaper reasoning model',

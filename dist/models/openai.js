@@ -25,6 +25,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 1.5,
+            cachedInput: 0.75,
             output: 12.0,
         },
         description: 'Most-used model with adaptive reasoning, warmer and more intelligent',
@@ -53,6 +54,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 2.5,
+            cachedInput: 1.25,
             output: 20.0,
         },
         description: 'Advanced reasoning model, easier to understand and faster on simple tasks',
@@ -80,6 +82,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 1.25,
+            cachedInput: 0.625,
             output: 10.0,
         },
         description: 'Smartest frontier model with configurable reasoning',
@@ -107,6 +110,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 0.25,
+            cachedInput: 0.125,
             output: 2.0,
         },
         description: 'Balanced performance and cost',
@@ -133,6 +137,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 0.05,
+            cachedInput: 0.025,
             output: 0.4,
         },
         description: 'Fastest, most cost-efficient version of GPT-5',
@@ -160,6 +165,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 2.5,
+            cachedInput: 1.25,
             output: 10.0,
         },
         description: 'Most capable GPT-4o, best for complex tasks',
@@ -187,6 +193,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 0.15,
+            cachedInput: 0.075,
             output: 0.6,
         },
         description: 'Fast and affordable, good for most tasks',
@@ -206,6 +213,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 15.0,
+            cachedInput: 7.5,
             output: 60.0,
         },
         description: 'Most advanced reasoning model for complex problem-solving',
@@ -225,6 +233,7 @@ exports.OPENAI_MODELS = [
         },
         pricing: {
             input: 3.0,
+            cachedInput: 1.5,
             output: 12.0,
         },
         description: 'Faster and cheaper reasoning model',

@@ -28,6 +28,11 @@ Comprehensive, up-to-date database of AI model providers, models, pricing, and c
 - **text-embedding-3-small** - 1536 dimensions, 5x cheaper than ada-002
 - **text-embedding-ada-002** - Legacy embedding model
 
+### Prompt Caching Support
+Both OpenAI and Anthropic models support prompt caching for reduced costs on repeated context:
+- **OpenAI**: GPT-5.1, GPT-5, GPT-4o, GPT-4o mini, O1 models (50% discount on cached tokens)
+- **Anthropic**: Claude 4.5 models (90% discount on cached tokens)
+
 ### MCP (Model Context Protocol) Support
 Claude 4.5 models (Haiku, Sonnet, Opus) now support MCP servers for connecting to external tools and data sources.
 
@@ -99,12 +104,20 @@ import { calculateCost, calculateCostWithCache, compareCosts } from '@gorets/ai-
 const cost = calculateCost('gpt-4o-mini-2024-07-18', 50000, 10000);
 console.log(`Total cost: $${cost.totalCost.toFixed(4)}`);
 
-// Calculate with prompt caching (Anthropic models)
+// Calculate with prompt caching (Anthropic & OpenAI models)
 const costWithCache = calculateCostWithCache(
   'claude-sonnet-4-5',
   50000,   // new input tokens
   200000,  // cached input tokens
   10000    // output tokens
+);
+
+// Works with OpenAI models too
+const openaiCached = calculateCostWithCache(
+  'gpt-4o-2024-08-06',
+  30000,   // new input tokens
+  100000,  // cached input tokens
+  5000     // output tokens
 );
 
 // Compare costs across multiple models
