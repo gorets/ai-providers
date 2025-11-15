@@ -73,6 +73,15 @@ export function getModelById(id: string): ModelInfo | undefined {
 }
 
 /**
+ * Get multiple models by their IDs, short names, or aliases
+ * Returns an array of models in the same order as the input IDs.
+ * If a model is not found, undefined is placed at that position.
+ */
+export function getModelsByIds(ids: string[]): (ModelInfo | undefined)[] {
+  return ids.map(id => getModelById(id));
+}
+
+/**
  * Get all models from a specific provider
  */
 export function getModelsByProvider(provider: string): ModelInfo[] {

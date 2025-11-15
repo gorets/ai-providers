@@ -124,7 +124,7 @@ curl -O https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-o
 ### TypeScript/JavaScript
 
 ```typescript
-import { getDatabase, getModelById, getModelsByProvider } from '@gorets/ai-providers';
+import { getDatabase, getModelById, getModelsByIds, getModelsByProvider } from '@gorets/ai-providers';
 
 // Get complete database
 const db = getDatabase();
@@ -134,6 +134,14 @@ console.log(`Total models: ${db.models.length}`);
 // Get specific model
 const gpt5 = getModelById('gpt-5.1-instant');
 console.log(`${gpt5.name}: $${gpt5.pricing.input}/1M input tokens`);
+
+// Get multiple models by IDs
+const models = getModelsByIds(['gpt-5.1-instant', 'claude-sonnet-4-5', 'gemini-2.5-flash']);
+models.forEach(model => {
+  if (model) {
+    console.log(`${model.name}: $${model.pricing?.input}/1M input tokens`);
+  }
+});
 
 // Get all models from a provider
 const anthropicModels = getModelsByProvider('anthropic');
@@ -250,13 +258,22 @@ const activeModels = getActiveModels();
 #### Context and Features
 
 ```typescript
-import { getModelsWithLargestContext, getModelById } from '@gorets/ai-providers';
+import { getModelsWithLargestContext, getModelById, getModelsByIds } from '@gorets/ai-providers';
 
 // Find models with largest context windows
 const largestContext = getModelsWithLargestContext(5);
 
 // Search by alias
 const model = getModelById('claude-sonnet-4-5'); // Works with aliases!
+
+// Get multiple models at once
+const selectedModels = getModelsByIds([
+  'gpt-5.1-instant',
+  'claude-sonnet-4-5',
+  'gemini-2.5-flash',
+  'grok-3'
+]);
+// Returns array of ModelInfo | undefined in the same order
 ```
 
 ### Direct JSON Access (No Installation Required)
