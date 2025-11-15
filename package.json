@@ -16,7 +16,8 @@
     "generate": "npm run build && node scripts/build-json.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm run generate",
-    "test": "npm run build:test && node --test dist/tests/**/*.test.js"
+    "test": "npm run build:test && node --test dist/tests/**/*.test.js",
+    "version": "npm run generate && git add data/"
   },
   "keywords": [
     "ai",
