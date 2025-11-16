@@ -6,6 +6,7 @@ import { MISTRAL_MODELS } from './mistral';
 import { META_MODELS } from './meta';
 import { DEEPSEEK_MODELS } from './deepseek';
 import { ZAI_MODELS } from './zai';
+import { ALIBABA_MODELS } from './alibaba';
 import { ModelInfo } from '../types';
 
 /**
@@ -20,4 +21,5 @@ export const ALL_MODELS: ModelInfo[] = [
   ...META_MODELS,
   ...DEEPSEEK_MODELS,
   ...ZAI_MODELS,
+  ...ALIBABA_MODELS,
 ];

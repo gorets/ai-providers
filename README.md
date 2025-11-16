@@ -7,8 +7,8 @@ Comprehensive, up-to-date database of AI model providers, models, pricing, and c
 
 ## 📋 Features
 
-- **Comprehensive Provider Data**: Information about 8 major AI providers (OpenAI, Anthropic, Google, xAI, Mistral, Meta, DeepSeek, Z.AI)
-- **47+ Models**: Including latest GPT-5.1, Claude 4.5, Gemini 2.5, and more
+- **Comprehensive Provider Data**: Information about 9 major AI providers (OpenAI, Anthropic, Google, xAI, Mistral, Meta, DeepSeek, Z.AI, Alibaba Cloud)
+- **60+ Models**: Including latest GPT-5.1, Claude 4.5, Gemini 2.5, Qwen3 Max, and more
 - **Detailed Model Information**: Context windows, pricing, capabilities, tags, and lifecycle management
 - **TypeScript Support**: Fully typed for excellent IDE support
 - **MCP Support**: Models with Model Context Protocol (MCP) server support marked
@@ -42,6 +42,7 @@ Claude 4.5 models (Haiku, Sonnet, Opus) now support MCP servers for connecting t
 - **Meta** - Llama 3.x open-source models
 - **DeepSeek** - Ultra cost-effective models with reasoning
 - **Z.AI** - Chinese AI provider with competitive pricing
+- **Alibaba Cloud** - Qwen models with trillion-parameter flagship, vision, and audio capabilities
 
 ## 📦 Installation
 
@@ -78,6 +79,7 @@ All data is available at `https://raw.githubusercontent.com/gorets/ai-providers/
 - **[models-meta.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-meta.json)** - Meta models (Llama 3.x)
 - **[models-deepseek.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-deepseek.json)** - DeepSeek models
 - **[models-zai.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-zai.json)** - Z.AI models
+- **[models-alibaba.json](https://raw.githubusercontent.com/gorets/ai-providers/main/data/models-alibaba.json)** - Alibaba Cloud models (Qwen series)
 
 ### Example: Fetch JSON in Browser/Node.js
 
