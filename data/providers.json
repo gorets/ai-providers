@@ -147,5 +147,26 @@
       "Extended context",
       "Ultra-low pricing"
     ]
+  },
+  {
+    "id": "alibaba",
+    "name": "Alibaba Cloud",
+    "website": "https://www.alibabacloud.com",
+    "apiBaseUrl": "https://dashscope.aliyuncs.com/api/v1",
+    "apiDocsUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
+    "modelsEndpoint": "https://dashscope.aliyuncs.com/api/v1/models",
+    "icon": "☁️",
+    "color": "#ff6a00",
+    "description": "Alibaba Cloud's Qwen models with trillion-parameter flagship and multimodal capabilities",
+    "features": [
+      "Chat completion",
+      "Code generation",
+      "Reasoning",
+      "Vision (VL models)",
+      "Audio input",
+      "Function calling",
+      "Extended context (up to 1M tokens)",
+      "Prompt caching"
+    ]
   }
 ]

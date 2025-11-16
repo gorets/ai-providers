@@ -1,0 +1,330 @@
+import { ModelInfo } from '../types';
+
+/**
+ * Alibaba Cloud (Qwen) Models
+ * Qwen series of large language models from Alibaba Cloud
+ */
+export const ALIBABA_MODELS: ModelInfo[] = [
+  // Qwen3 Series (Latest - 2025)
+  {
+    id: 'qwen3-max',
+    aliases: ['qwen3-max-preview'],
+    name: 'Qwen3 Max',
+    provider: 'alibaba',
+    releaseDate: '2025-09-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'reasoning',
+      'function-calling',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['flagship', 'reasoning', 'coding', 'long-context'],
+    limits: {
+      contextWindow: 262144, // 262K tokens
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.861, // 0-32K tokens tier
+      output: 3.441,
+      cachedInput: 0.0861, // 10% of input price for explicit cache
+    },
+    description: 'Trillion-parameter flagship model with extended context and caching support',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+  {
+    id: 'qwen3-coder-plus',
+    name: 'Qwen3 Coder Plus',
+    provider: 'alibaba',
+    releaseDate: '2025-04-28',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['coding', 'balanced', 'long-context'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 0.5,
+      output: 2.0,
+      cachedInput: 0.05, // 10% for explicit cache
+    },
+    description: 'Specialized coding model with context caching',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+
+  // Qwen2.5 Series
+  {
+    id: 'qwen2.5-max',
+    shortName: 'qwen-max',
+    aliases: ['qwen-max'],
+    name: 'Qwen2.5 Max',
+    provider: 'alibaba',
+    releaseDate: '2025-01-29',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'reasoning',
+      'function-calling',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['flagship', 'reasoning', 'coding'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 1.6,
+      output: 6.4,
+    },
+    description: 'High-performance flagship model with strong reasoning capabilities',
+    docsUrl: 'https://qwenlm.github.io/blog/qwen2.5-max/',
+  },
+  {
+    id: 'qwen-plus',
+    aliases: ['qwen-plus-latest', 'qwen-plus-2025-09-11'],
+    name: 'Qwen Plus',
+    provider: 'alibaba',
+    releaseDate: '2024-11-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['balanced', 'coding'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 3.0,
+      output: 9.0,
+    },
+    description: 'Balanced model with tiered pricing based on input tokens',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+  {
+    id: 'qwen-turbo',
+    aliases: ['qwen-turbo-latest'],
+    name: 'Qwen Turbo',
+    provider: 'alibaba',
+    releaseDate: '2024-12-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['fast', 'cost-effective', 'long-context'],
+    limits: {
+      contextWindow: 1000000, // 1M tokens
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.05,
+      output: 0.20,
+      cachedInput: 0.01, // 20% for implicit cache
+    },
+    description: 'Fast and cost-effective model with 1M token context window',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+
+  // Qwen2.5 Open Source Models (via API)
+  {
+    id: 'qwen2.5-72b-instruct',
+    name: 'Qwen2.5 72B Instruct',
+    provider: 'alibaba',
+    releaseDate: '2024-09-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['balanced', 'coding', 'long-context'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.5,
+      output: 1.5,
+    },
+    description: 'Large open-source model with strong coding capabilities',
+    docsUrl: 'https://qwenlm.github.io/blog/qwen2.5/',
+  },
+  {
+    id: 'qwen2.5-32b-instruct',
+    name: 'Qwen2.5 32B Instruct',
+    provider: 'alibaba',
+    releaseDate: '2024-09-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['balanced', 'coding', 'long-context'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.3,
+      output: 0.9,
+    },
+    description: 'Mid-size efficient model for general tasks',
+    docsUrl: 'https://qwenlm.github.io/blog/qwen2.5/',
+  },
+  {
+    id: 'qwen2.5-14b-instruct',
+    name: 'Qwen2.5 14B Instruct',
+    provider: 'alibaba',
+    releaseDate: '2024-09-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['fast', 'cost-effective', 'long-context'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.15,
+      output: 0.45,
+    },
+    description: 'Compact and efficient model for cost-sensitive applications',
+    docsUrl: 'https://qwenlm.github.io/blog/qwen2.5/',
+  },
+  {
+    id: 'qwen2.5-7b-instruct',
+    name: 'Qwen2.5 7B Instruct',
+    provider: 'alibaba',
+    releaseDate: '2024-09-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['fast', 'cost-effective', 'long-context'],
+    limits: {
+      contextWindow: 128000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.08,
+      output: 0.24,
+    },
+    description: 'Small and fast model for simple tasks',
+    docsUrl: 'https://qwenlm.github.io/blog/qwen2.5/',
+  },
+
+  // Vision Models
+  {
+    id: 'qwen-vl-max',
+    name: 'Qwen VL Max',
+    provider: 'alibaba',
+    releaseDate: '2024-08-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['flagship', 'multimodal'],
+    limits: {
+      contextWindow: 32000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 2.0,
+      output: 8.0,
+      perImage: 0.001,
+    },
+    description: 'Flagship multimodal model with vision capabilities',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+  {
+    id: 'qwen-vl-plus',
+    name: 'Qwen VL Plus',
+    provider: 'alibaba',
+    releaseDate: '2024-08-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'streaming',
+      'json-mode',
+    ],
+    tags: ['balanced', 'multimodal'],
+    limits: {
+      contextWindow: 32000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.8,
+      output: 3.2,
+      perImage: 0.0005,
+    },
+    description: 'Balanced multimodal model for image understanding',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+
+  // Audio Models
+  {
+    id: 'qwen-audio-turbo',
+    name: 'Qwen Audio Turbo',
+    provider: 'alibaba',
+    releaseDate: '2024-10-01',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'audio-input',
+      'streaming',
+    ],
+    tags: ['fast', 'multimodal'],
+    limits: {
+      contextWindow: 8000,
+      maxOutputTokens: 2048,
+    },
+    pricing: {
+      input: 0.4,
+      output: 1.6,
+      perAudioMinute: 0.05,
+    },
+    description: 'Audio understanding model for speech and sound analysis',
+    docsUrl: 'https://www.alibabacloud.com/help/en/model-studio/models',
+  },
+];
