@@ -2,43 +2,16 @@ import { ModelInfo } from '../types';
 
 /**
  * Google (Gemini) Models
- * Updated with latest Gemini 2.x series
+ * Updated with latest Gemini 3.x series
  */
 export const GOOGLE_MODELS: ModelInfo[] = [
-  // Gemini 2.5 Series
+  // Gemini 3.0 Series
   {
-    id: 'gemini-2.5-flash',
-    name: 'Gemini 2.5 Flash',
+    id: 'gemini-3.0-pro',
+    aliases: ['gemini-3-pro', 'gemini-3.0', 'gemini-3'],
+    name: 'Gemini 3.0 Pro',
     provider: 'google',
-    releaseDate: '2025-02-15',
-    status: 'stable',
-    capabilities: [
-      'text-generation',
-      'chat',
-      'vision',
-      'audio-input',
-      'function-calling',
-      'streaming',
-      'json-mode',
-      'code-generation',
-    ],
-    tags: ['fast', 'cost-effective', 'multimodal', 'long-context'],
-    limits: {
-      contextWindow: 1000000,
-      maxOutputTokens: 8192,
-    },
-    pricing: {
-      input: 0.35,
-      output: 1.05,
-    },
-    description: 'Latest stable, fast and affordable with 1M token context',
-    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
-  },
-  {
-    id: 'gemini-2.5-pro',
-    name: 'Gemini 2.5 Pro',
-    provider: 'google',
-    releaseDate: '2025-03-01',
+    releaseDate: '2025-11-18',
     status: 'stable',
     capabilities: [
       'text-generation',
@@ -53,6 +26,67 @@ export const GOOGLE_MODELS: ModelInfo[] = [
     ],
     tags: ['flagship', 'long-context', 'multimodal', 'reasoning'],
     limits: {
+      contextWindow: 1000000,
+      maxOutputTokens: 64000,
+    },
+    pricing: {
+      input: 2.0,
+      output: 12.0,
+    },
+    description: '#1 on LMArena (1501 Elo), 1M context, 64K output, thinking_level parameter for reasoning control',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/gemini-3',
+  },
+
+  // Gemini 2.5 Series (Previous generation)
+  {
+    id: 'gemini-2.5-flash',
+    name: 'Gemini 2.5 Flash',
+    provider: 'google',
+    releaseDate: '2025-02-15',
+    status: 'deprecated',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'audio-input',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'code-generation',
+    ],
+    tags: ['deprecated', 'fast', 'cost-effective', 'multimodal', 'long-context'],
+    limits: {
+      contextWindow: 1000000,
+      maxOutputTokens: 8192,
+    },
+    pricing: {
+      input: 0.35,
+      output: 1.05,
+    },
+    description: 'Previous generation Flash, replaced by Gemini 3.0 Pro',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+    deprecationDate: '2025-11-18',
+    replacementModel: 'gemini-3.0-pro',
+  },
+  {
+    id: 'gemini-2.5-pro',
+    name: 'Gemini 2.5 Pro',
+    provider: 'google',
+    releaseDate: '2025-03-01',
+    status: 'deprecated',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'vision',
+      'audio-input',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'code-generation',
+      'reasoning',
+    ],
+    tags: ['deprecated', 'long-context', 'multimodal', 'reasoning'],
+    limits: {
       contextWindow: 2000000,
       maxOutputTokens: 8192,
     },
@@ -60,8 +94,10 @@ export const GOOGLE_MODELS: ModelInfo[] = [
       input: 1.25,
       output: 5.0,
     },
-    description: 'Most capable Gemini with massive 2M token context window',
+    description: 'Previous generation Pro with 2M context, replaced by Gemini 3.0 Pro',
     docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+    deprecationDate: '2025-11-18',
+    replacementModel: 'gemini-3.0-pro',
   },
 
   // Gemini 2.0 Series
@@ -98,7 +134,7 @@ export const GOOGLE_MODELS: ModelInfo[] = [
     id: 'gemini-flash-latest',
     name: 'Gemini Flash (Latest)',
     provider: 'google',
-    status: 'stable',
+    status: 'deprecated',
     capabilities: [
       'text-generation',
       'chat',
@@ -109,7 +145,7 @@ export const GOOGLE_MODELS: ModelInfo[] = [
       'json-mode',
       'code-generation',
     ],
-    tags: ['fast', 'cost-effective', 'multimodal', 'long-context'],
+    tags: ['deprecated', 'fast', 'cost-effective', 'multimodal', 'long-context'],
     limits: {
       contextWindow: 1000000,
       maxOutputTokens: 8192,
@@ -118,8 +154,10 @@ export const GOOGLE_MODELS: ModelInfo[] = [
       input: 0.35,
       output: 1.05,
     },
-    description: 'Auto-updated to latest stable Flash version (currently 2.5)',
+    description: 'Auto-updated alias (currently 2.5), use gemini-3.0-pro instead',
     docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+    deprecationDate: '2025-11-18',
+    replacementModel: 'gemini-3.0-pro',
   },
   {
     id: 'gemini-pro-latest',
@@ -139,15 +177,15 @@ export const GOOGLE_MODELS: ModelInfo[] = [
     ],
     tags: ['flagship', 'long-context', 'multimodal', 'reasoning'],
     limits: {
-      contextWindow: 2000000,
-      maxOutputTokens: 8192,
+      contextWindow: 1000000,
+      maxOutputTokens: 64000,
     },
     pricing: {
-      input: 1.25,
-      output: 5.0,
+      input: 2.0,
+      output: 12.0,
     },
-    description: 'Auto-updated to latest stable Pro version (currently 2.5)',
-    docsUrl: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+    description: 'Auto-updated to latest stable Pro version (currently 3.0)',
+    docsUrl: 'https://ai.google.dev/gemini-api/docs/gemini-3',
   },
 
   // Gemini 1.5 Series (Previous generation)

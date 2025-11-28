@@ -21,7 +21,9 @@ export type ModelCapability =
   | 'embeddings'
   | 'audio-input'
   | 'audio-output'
-  | 'mcp-servers';
+  | 'mcp-servers'
+  | 'computer-use'
+  | 'agent-tools';
 
 /**
  * Model tags for categorization
@@ -36,7 +38,10 @@ export type ModelTag =
   | 'multimodal'
   | 'reasoning'
   | 'coding'
-  | 'deprecated';
+  | 'deprecated'
+  | 'agent'
+  | 'tool-calling'
+  | 'computer-use';
 
 /**
  * Model status in lifecycle
