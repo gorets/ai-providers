@@ -5,13 +5,70 @@ import { ModelInfo } from '../types';
  * Elon Musk's AI company with Grok models
  */
 export const XAI_MODELS: ModelInfo[] = [
+  // Grok 4.1 Series
+  {
+    id: 'grok-4.1',
+    aliases: ['grok-4-1', 'grok-4.1-thinking'],
+    name: 'Grok 4.1',
+    provider: 'xai',
+    releaseDate: '2025-11-17',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'reasoning',
+    ],
+    tags: ['flagship', 'long-context', 'reasoning'],
+    limits: {
+      contextWindow: 2000000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 0.2,
+      output: 0.5,
+    },
+    description: '#1 on LMArena (1483 Elo), 2M context, 65% fewer errors, 3x fewer hallucinations',
+    docsUrl: 'https://docs.x.ai/docs',
+  },
+  {
+    id: 'grok-4.1-fast',
+    aliases: ['grok-4-1-fast'],
+    name: 'Grok 4.1 Fast',
+    provider: 'xai',
+    releaseDate: '2025-11-19',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'agent-tools',
+    ],
+    tags: ['fast', 'agent', 'long-context', 'tool-calling'],
+    limits: {
+      contextWindow: 2000000,
+      maxOutputTokens: 4096,
+    },
+    pricing: {
+      input: 0.05,
+      output: 0.5,
+    },
+    description: 'Best tool-calling model, <400ms latency, optimized for agents and customer support',
+    docsUrl: 'https://docs.x.ai/docs',
+  },
+
+  // Grok Beta Series (Previous generation)
   {
     id: 'grok-beta',
     aliases: ['grok'],
     name: 'Grok Beta',
     provider: 'xai',
     releaseDate: '2024-11-04',
-    status: 'beta',
+    status: 'deprecated',
     capabilities: [
       'text-generation',
       'chat',
@@ -19,7 +76,7 @@ export const XAI_MODELS: ModelInfo[] = [
       'function-calling',
       'streaming',
     ],
-    tags: ['flagship', 'experimental'],
+    tags: ['deprecated', 'experimental'],
     limits: {
       contextWindow: 131072,
       maxOutputTokens: 4096,
@@ -28,8 +85,10 @@ export const XAI_MODELS: ModelInfo[] = [
       input: 5.0,
       output: 15.0,
     },
-    description: 'xAI flagship model with real-time X (Twitter) data access',
+    description: 'Previous generation Grok, replaced by Grok 4.1',
     docsUrl: 'https://docs.x.ai/docs',
+    deprecationDate: '2025-11-17',
+    replacementModel: 'grok-4.1',
   },
   {
     id: 'grok-vision-beta',
@@ -37,7 +96,7 @@ export const XAI_MODELS: ModelInfo[] = [
     name: 'Grok Vision Beta',
     provider: 'xai',
     releaseDate: '2024-11-20',
-    status: 'beta',
+    status: 'deprecated',
     capabilities: [
       'text-generation',
       'chat',
@@ -46,7 +105,7 @@ export const XAI_MODELS: ModelInfo[] = [
       'function-calling',
       'streaming',
     ],
-    tags: ['flagship', 'multimodal', 'experimental'],
+    tags: ['deprecated', 'multimodal', 'experimental'],
     limits: {
       contextWindow: 131072,
       maxOutputTokens: 4096,
@@ -55,7 +114,9 @@ export const XAI_MODELS: ModelInfo[] = [
       input: 5.0,
       output: 15.0,
     },
-    description: 'Grok with vision capabilities for image understanding',
+    description: 'Previous generation Grok with vision, replaced by Grok 4.1',
     docsUrl: 'https://docs.x.ai/docs',
+    deprecationDate: '2025-11-17',
+    replacementModel: 'grok-4.1',
   },
 ];
