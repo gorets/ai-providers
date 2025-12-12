@@ -1,8 +1,8 @@
 {
   "metadata": {
     "version": "1.0.11",
-    "lastUpdated": "2025-11-28",
-    "generatedAt": "2025-11-28"
+    "lastUpdated": "2025-12-12",
+    "generatedAt": "2025-12-12"
   },
   "providers": [
     {
@@ -177,6 +177,116 @@
     }
   ],
   "models": [
+    {
+      "id": "gpt-5.2-instant",
+      "shortName": "gpt-5.2",
+      "aliases": [
+        "gpt-5-2-instant",
+        "gpt-5.2-chat-latest"
+      ],
+      "name": "GPT-5.2 Instant",
+      "provider": "openai",
+      "releaseDate": "2025-12-11",
+      "status": "stable",
+      "capabilities": [
+        "text-generation",
+        "chat",
+        "code-generation",
+        "function-calling",
+        "streaming",
+        "json-mode",
+        "reasoning",
+        "vision"
+      ],
+      "tags": [
+        "flagship",
+        "fast",
+        "professional"
+      ],
+      "limits": {
+        "contextWindow": 400000,
+        "maxOutputTokens": 128000
+      },
+      "pricing": {
+        "input": 1.75,
+        "output": 14
+      },
+      "description": "Speed-optimized model for routine queries like information-seeking, writing, and translation",
+      "docsUrl": "https://platform.openai.com/docs/models/gpt-5-2"
+    },
+    {
+      "id": "gpt-5.2",
+      "aliases": [
+        "gpt-5-2",
+        "gpt-5.2-thinking"
+      ],
+      "name": "GPT-5.2 Thinking",
+      "provider": "openai",
+      "releaseDate": "2025-12-11",
+      "status": "stable",
+      "capabilities": [
+        "text-generation",
+        "chat",
+        "code-generation",
+        "function-calling",
+        "streaming",
+        "json-mode",
+        "reasoning",
+        "vision"
+      ],
+      "tags": [
+        "flagship",
+        "reasoning",
+        "coding",
+        "professional"
+      ],
+      "limits": {
+        "contextWindow": 400000,
+        "maxOutputTokens": 128000
+      },
+      "pricing": {
+        "input": 1.75,
+        "output": 14
+      },
+      "description": "Excels at complex structured work like coding, analyzing long documents, math, and planning",
+      "docsUrl": "https://platform.openai.com/docs/models/gpt-5-2"
+    },
+    {
+      "id": "gpt-5.2-pro",
+      "aliases": [
+        "gpt-5-2-pro"
+      ],
+      "name": "GPT-5.2 Pro",
+      "provider": "openai",
+      "releaseDate": "2025-12-11",
+      "status": "stable",
+      "capabilities": [
+        "text-generation",
+        "chat",
+        "code-generation",
+        "function-calling",
+        "streaming",
+        "json-mode",
+        "reasoning",
+        "vision"
+      ],
+      "tags": [
+        "flagship",
+        "professional",
+        "premium",
+        "coding"
+      ],
+      "limits": {
+        "contextWindow": 400000,
+        "maxOutputTokens": 128000
+      },
+      "pricing": {
+        "input": 21,
+        "output": 168
+      },
+      "description": "Top-end model delivering maximum accuracy and reliability for difficult problems",
+      "docsUrl": "https://platform.openai.com/docs/models/gpt-5-2-pro"
+    },
     {
       "id": "gpt-5.1-instant",
       "shortName": "gpt-5.1",

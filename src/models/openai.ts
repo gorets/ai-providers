@@ -8,7 +8,97 @@ import { ModelInfo } from '../types';
  * https://platform.openai.com/docs/pricing
  */
 export const OPENAI_MODELS: ModelInfo[] = [
-  // GPT-5.1 Series (Latest - November 2025)
+  // GPT-5.2 Series (Latest - December 2025)
+  {
+    id: 'gpt-5.2-instant',
+    shortName: 'gpt-5.2',
+    aliases: ['gpt-5-2-instant', 'gpt-5.2-chat-latest'],
+    name: 'GPT-5.2 Instant',
+    provider: 'openai',
+    releaseDate: '2025-12-11',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'reasoning',
+      'vision',
+    ],
+    tags: ['flagship', 'fast', 'professional'],
+    limits: {
+      contextWindow: 400000,
+      maxOutputTokens: 128000,
+    },
+    pricing: {
+      input: 1.75,
+      output: 14.0,
+    },
+    description: 'Speed-optimized model for routine queries like information-seeking, writing, and translation',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-2',
+  },
+  {
+    id: 'gpt-5.2',
+    aliases: ['gpt-5-2', 'gpt-5.2-thinking'],
+    name: 'GPT-5.2 Thinking',
+    provider: 'openai',
+    releaseDate: '2025-12-11',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'reasoning',
+      'vision',
+    ],
+    tags: ['flagship', 'reasoning', 'coding', 'professional'],
+    limits: {
+      contextWindow: 400000,
+      maxOutputTokens: 128000,
+    },
+    pricing: {
+      input: 1.75,
+      output: 14.0,
+    },
+    description: 'Excels at complex structured work like coding, analyzing long documents, math, and planning',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-2',
+  },
+  {
+    id: 'gpt-5.2-pro',
+    aliases: ['gpt-5-2-pro'],
+    name: 'GPT-5.2 Pro',
+    provider: 'openai',
+    releaseDate: '2025-12-11',
+    status: 'stable',
+    capabilities: [
+      'text-generation',
+      'chat',
+      'code-generation',
+      'function-calling',
+      'streaming',
+      'json-mode',
+      'reasoning',
+      'vision',
+    ],
+    tags: ['flagship', 'professional', 'premium', 'coding'],
+    limits: {
+      contextWindow: 400000,
+      maxOutputTokens: 128000,
+    },
+    pricing: {
+      input: 21.0,
+      output: 168.0,
+    },
+    description: 'Top-end model delivering maximum accuracy and reliability for difficult problems',
+    docsUrl: 'https://platform.openai.com/docs/models/gpt-5-2-pro',
+  },
+
+  // GPT-5.1 Series (November 2025)
   {
     id: 'gpt-5.1-instant',
     shortName: 'gpt-5.1',

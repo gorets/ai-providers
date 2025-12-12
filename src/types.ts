@@ -41,7 +41,9 @@ export type ModelTag =
   | 'deprecated'
   | 'agent'
   | 'tool-calling'
-  | 'computer-use';
+  | 'computer-use'
+  | 'professional'
+  | 'premium';
 
 /**
  * Model status in lifecycle
